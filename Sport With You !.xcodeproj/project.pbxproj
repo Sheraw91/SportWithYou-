@@ -8,20 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		3B01080E2281E243005E1CBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B01080D2281E243005E1CBF /* AppDelegate.swift */; };
-		3B0108102281E243005E1CBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B01080F2281E243005E1CBF /* ViewController.swift */; };
+		3B0108102281E243005E1CBF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B01080F2281E243005E1CBF /* LoginController.swift */; };
 		3B0108132281E243005E1CBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0108112281E243005E1CBF /* Main.storyboard */; };
 		3B0108152281E243005E1CBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B0108142281E243005E1CBF /* Assets.xcassets */; };
 		3B0108182281E243005E1CBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0108162281E243005E1CBF /* LaunchScreen.storyboard */; };
+		3B0108202281E2A6005E1CBF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B01081F2281E2A6005E1CBF /* GoogleService-Info.plist */; };
+		3B551B6E2281EB6800BEBA5B /* SigninController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B551B6D2281EB6800BEBA5B /* SigninController.swift */; };
+		3BFB520A22838AE50041D872 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB520922838AE50041D872 /* HomeController.swift */; };
+		3BFB520C22841A420041D872 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB520B22841A420041D872 /* ProfileController.swift */; };
+		3BFB520E2284515C0041D872 /* ProgramController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB520D2284515C0041D872 /* ProgramController.swift */; };
+		3BFB5210228451720041D872 /* SharedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB520F228451720041D872 /* SharedController.swift */; };
+		3BFB5216228460A20041D872 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB5215228460A20041D872 /* TabBarViewController.swift */; };
+		942F272A6CC2D3CE6F88C5F8 /* Pods_Sport_With_You__.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0224C0B8994BED7124696BB6 /* Pods_Sport_With_You__.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0224C0B8994BED7124696BB6 /* Pods_Sport_With_You__.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sport_With_You__.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DEAC727790F6C4D43689FFF /* Pods-Sport With You !.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sport With You !.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sport With You !/Pods-Sport With You !.debug.xcconfig"; sourceTree = "<group>"; };
+		39F6161FD9F23CD731DBF6B4 /* Pods-Sport With You !.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sport With You !.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sport With You !/Pods-Sport With You !.release.xcconfig"; sourceTree = "<group>"; };
 		3B01080A2281E243005E1CBF /* Sport With You !.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sport With You !.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B01080D2281E243005E1CBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3B01080F2281E243005E1CBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3B01080F2281E243005E1CBF /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		3B0108122281E243005E1CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B0108142281E243005E1CBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B0108172281E243005E1CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B0108192281E243005E1CBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B01081F2281E2A6005E1CBF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3B551B6D2281EB6800BEBA5B /* SigninController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninController.swift; sourceTree = "<group>"; };
+		3BFB520922838AE50041D872 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		3BFB520B22841A420041D872 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		3BFB520D2284515C0041D872 /* ProgramController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramController.swift; sourceTree = "<group>"; };
+		3BFB520F228451720041D872 /* SharedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedController.swift; sourceTree = "<group>"; };
+		3BFB5215228460A20041D872 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				942F272A6CC2D3CE6F88C5F8 /* Pods_Sport_With_You__.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16C5D5BD62698131D7659050 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1DEAC727790F6C4D43689FFF /* Pods-Sport With You !.debug.xcconfig */,
+				39F6161FD9F23CD731DBF6B4 /* Pods-Sport With You !.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2B0E432904AC272B0551230D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0224C0B8994BED7124696BB6 /* Pods_Sport_With_You__.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3B0108012281E243005E1CBF = {
 			isa = PBXGroup;
 			children = (
 				3B01080C2281E243005E1CBF /* Sport With You ! */,
 				3B01080B2281E243005E1CBF /* Products */,
+				16C5D5BD62698131D7659050 /* Pods */,
+				2B0E432904AC272B0551230D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,11 +93,18 @@
 			isa = PBXGroup;
 			children = (
 				3B01080D2281E243005E1CBF /* AppDelegate.swift */,
-				3B01080F2281E243005E1CBF /* ViewController.swift */,
+				3B01080F2281E243005E1CBF /* LoginController.swift */,
+				3B551B6D2281EB6800BEBA5B /* SigninController.swift */,
+				3BFB520922838AE50041D872 /* HomeController.swift */,
+				3BFB520B22841A420041D872 /* ProfileController.swift */,
+				3BFB520D2284515C0041D872 /* ProgramController.swift */,
+				3BFB520F228451720041D872 /* SharedController.swift */,
+				3BFB5215228460A20041D872 /* TabBarViewController.swift */,
 				3B0108112281E243005E1CBF /* Main.storyboard */,
 				3B0108142281E243005E1CBF /* Assets.xcassets */,
 				3B0108162281E243005E1CBF /* LaunchScreen.storyboard */,
 				3B0108192281E243005E1CBF /* Info.plist */,
+				3B01081F2281E2A6005E1CBF /* GoogleService-Info.plist */,
 			);
 			path = "Sport With You !";
 			sourceTree = "<group>";
@@ -71,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B01081C2281E243005E1CBF /* Build configuration list for PBXNativeTarget "Sport With You !" */;
 			buildPhases = (
+				26A8595B3B80785983A86372 /* [CP] Check Pods Manifest.lock */,
 				3B0108062281E243005E1CBF /* Sources */,
 				3B0108072281E243005E1CBF /* Frameworks */,
 				3B0108082281E243005E1CBF /* Resources */,
+				32CF91FAB97F8A357B34129C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B0108182281E243005E1CBF /* LaunchScreen.storyboard in Resources */,
+				3B0108202281E2A6005E1CBF /* GoogleService-Info.plist in Resources */,
 				3B0108152281E243005E1CBF /* Assets.xcassets in Resources */,
 				3B0108132281E243005E1CBF /* Main.storyboard in Resources */,
 			);
@@ -130,12 +178,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		26A8595B3B80785983A86372 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sport With You !-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32CF91FAB97F8A357B34129C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Sport With You !/Pods-Sport With You !-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sport With You !/Pods-Sport With You !-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3B0108062281E243005E1CBF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B0108102281E243005E1CBF /* ViewController.swift in Sources */,
+				3BFB5216228460A20041D872 /* TabBarViewController.swift in Sources */,
+				3BFB5210228451720041D872 /* SharedController.swift in Sources */,
+				3BFB520C22841A420041D872 /* ProfileController.swift in Sources */,
+				3BFB520A22838AE50041D872 /* HomeController.swift in Sources */,
+				3BFB520E2284515C0041D872 /* ProgramController.swift in Sources */,
+				3B0108102281E243005E1CBF /* LoginController.swift in Sources */,
+				3B551B6E2281EB6800BEBA5B /* SigninController.swift in Sources */,
 				3B01080E2281E243005E1CBF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,9 +381,11 @@
 		};
 		3B01081D2281E243005E1CBF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DEAC727790F6C4D43689FFF /* Pods-Sport With You !.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Sport With You !/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -297,9 +400,11 @@
 		};
 		3B01081E2281E243005E1CBF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39F6161FD9F23CD731DBF6B4 /* Pods-Sport With You !.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Sport With You !/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
