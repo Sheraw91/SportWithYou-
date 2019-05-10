@@ -14,11 +14,13 @@
 		3B0108182281E243005E1CBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0108162281E243005E1CBF /* LaunchScreen.storyboard */; };
 		3B0108202281E2A6005E1CBF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B01081F2281E2A6005E1CBF /* GoogleService-Info.plist */; };
 		3B551B6E2281EB6800BEBA5B /* SigninController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B551B6D2281EB6800BEBA5B /* SigninController.swift */; };
+		3BCBE90322856EF40082997A /* timer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3BCBE90222856EF40082997A /* timer.mp3 */; };
 		3BFB520A22838AE50041D872 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB520922838AE50041D872 /* HomeController.swift */; };
 		3BFB520C22841A420041D872 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB520B22841A420041D872 /* ProfileController.swift */; };
 		3BFB520E2284515C0041D872 /* ProgramController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB520D2284515C0041D872 /* ProgramController.swift */; };
 		3BFB5210228451720041D872 /* SharedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB520F228451720041D872 /* SharedController.swift */; };
 		3BFB5216228460A20041D872 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB5215228460A20041D872 /* TabBarViewController.swift */; };
+		3BFB52182284D53E0041D872 /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB52172284D53E0041D872 /* EditProfileController.swift */; };
 		942F272A6CC2D3CE6F88C5F8 /* Pods_Sport_With_You__.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0224C0B8994BED7124696BB6 /* Pods_Sport_With_You__.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,11 +37,13 @@
 		3B0108192281E243005E1CBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B01081F2281E2A6005E1CBF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3B551B6D2281EB6800BEBA5B /* SigninController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninController.swift; sourceTree = "<group>"; };
+		3BCBE90222856EF40082997A /* timer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = timer.mp3; sourceTree = "<group>"; };
 		3BFB520922838AE50041D872 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		3BFB520B22841A420041D872 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		3BFB520D2284515C0041D872 /* ProgramController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramController.swift; sourceTree = "<group>"; };
 		3BFB520F228451720041D872 /* SharedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedController.swift; sourceTree = "<group>"; };
 		3BFB5215228460A20041D872 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		3BFB52172284D53E0041D872 /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 				3B551B6D2281EB6800BEBA5B /* SigninController.swift */,
 				3BFB520922838AE50041D872 /* HomeController.swift */,
 				3BFB520B22841A420041D872 /* ProfileController.swift */,
+				3BFB52172284D53E0041D872 /* EditProfileController.swift */,
 				3BFB520D2284515C0041D872 /* ProgramController.swift */,
 				3BFB520F228451720041D872 /* SharedController.swift */,
 				3BFB5215228460A20041D872 /* TabBarViewController.swift */,
@@ -105,6 +110,7 @@
 				3B0108162281E243005E1CBF /* LaunchScreen.storyboard */,
 				3B0108192281E243005E1CBF /* Info.plist */,
 				3B01081F2281E2A6005E1CBF /* GoogleService-Info.plist */,
+				3BCBE90222856EF40082997A /* timer.mp3 */,
 			);
 			path = "Sport With You !";
 			sourceTree = "<group>";
@@ -143,6 +149,11 @@
 				TargetAttributes = {
 					3B0108092281E243005E1CBF = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -172,6 +183,7 @@
 				3B0108182281E243005E1CBF /* LaunchScreen.storyboard in Resources */,
 				3B0108202281E2A6005E1CBF /* GoogleService-Info.plist in Resources */,
 				3B0108152281E243005E1CBF /* Assets.xcassets in Resources */,
+				3BCBE90322856EF40082997A /* timer.mp3 in Resources */,
 				3B0108132281E243005E1CBF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,6 +244,7 @@
 			files = (
 				3BFB5216228460A20041D872 /* TabBarViewController.swift in Sources */,
 				3BFB5210228451720041D872 /* SharedController.swift in Sources */,
+				3BFB52182284D53E0041D872 /* EditProfileController.swift in Sources */,
 				3BFB520C22841A420041D872 /* ProfileController.swift in Sources */,
 				3BFB520A22838AE50041D872 /* HomeController.swift in Sources */,
 				3BFB520E2284515C0041D872 /* ProgramController.swift in Sources */,
