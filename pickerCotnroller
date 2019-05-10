@@ -1,0 +1,33 @@
+import UIKit
+
+class ProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    @IBOutlet weak var Picker1: UIPickerView!
+    
+    var Array = ["05:00","10:00","15:00","20:00","25:00","30:00","35:00","40:00","45:00","50:00","55:00", "60:00"]
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "404"), tag: 1)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+        
+        Picker1.delegate = self
+        Picker1.dataSource = self
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return Array[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Array.count
+    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+}
