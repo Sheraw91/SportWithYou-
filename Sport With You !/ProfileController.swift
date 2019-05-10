@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
 class ProfileController: UIViewController {
 
@@ -22,6 +23,7 @@ class ProfileController: UIViewController {
     @IBOutlet weak var lastnameLabel: UILabel!
     @IBOutlet weak var birthdayLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var profilePictureImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,11 +41,35 @@ class ProfileController: UIViewController {
                 let lastname = value?["lastname"] as? String ?? "no lastname :("
                 let birthday = value?["birthday"] as? String ?? "no birthday :("
                 let country = value?["country"] as? String ?? "no country :("
+                
+        
                 self.usernameLabel.text = username
                 self.firstnameLabel.text = firstname
                 self.lastnameLabel.text = lastname
                 self.birthdayLabel.text = birthday
                 self.countryLabel.text = country
+                
+  
+                
+               ref.child("users").child(uiserID!).child("url-img-pp").observeSingleEvent(of: .value, with: { (snapshot) in
+                    if let item = snapshot.value as? String{
+        
+                        let storage = Storage.storage()
+                        var reference: StorageReference!
+                        reference = Storage.storage().reference(forURL: item)
+                        reference.downloadURL { (url, error) in
+                            let data = NSData(contentsOf: url!)
+                            let image = UIImage(data: data! as Data)
+                            self.profilePictureImageView.image = image
+                        }
+                    }
+                
+                })
+                
+                
+                
+                
+                
                 
             }
             
