@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>458252627474-n7nshce0pfth2i9gifedqh23m4cv0qog.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.458252627474-n7nshce0pfth2i9gifedqh23m4cv0qog</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCMaxpCWxN1IHLndraR6FpEJBkF7_cqONQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>458252627474</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Ynov.SportWithYou</string>
+	<key>PROJECT_ID</key>
+	<string>sportwithyou-ynov</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sportwithyou-ynov.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:458252627474:ios:3df573e1351931cb</string>
+	<key>DATABASE_URL</key>
+	<string>https://sportwithyou-ynov.firebaseio.com</string>
+</dict>
+</plist>

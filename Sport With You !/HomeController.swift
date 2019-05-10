@@ -40,12 +40,11 @@ class HomeController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var pauseButton: UIButton!
     //ajouter et enlever temps
-    @IBOutlet weak var addTimeButton: UIButton!
-    @IBOutlet weak var lessTimeButton: UIButton!
+
     
    // Timer configuration
     @IBAction func resetTimer(_ sender: UIButton) {
-        sender.pulsate()
+        sender.shake()
         timer.invalidate()
         time = 0
         updateUI()
@@ -60,7 +59,7 @@ class HomeController: UIViewController {
     @IBAction func startTimer(_ sender: UIButton) {
         sender.pulsate()
         if timerIsOn == false {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerDidEnded), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerDidEnded), userInfo: nil, repeats: true)
             timerIsOn = true
         }
     }
@@ -104,9 +103,12 @@ class HomeController: UIViewController {
         
     }
     
-    // Gestion du temps
+    // Gestion du temps + Affichage
     @IBAction func lessTime(_ sender: UIButton) {
         addMin -= 5
+        if addMin == 5{
+            minutesLabel.text = String("0\(addMin)")
+        }
         if addMin <= -1{
             addMin = 55
             addHours -= 1
