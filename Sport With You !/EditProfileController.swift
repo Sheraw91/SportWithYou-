@@ -16,5 +16,8 @@ class EditProfileController: UIViewController {
     }
     
 
-
+    @IBAction func cancelEditingProfile(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "cancelEditingProfile", sender: self)
+    }
+    
 }

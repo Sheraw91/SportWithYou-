@@ -9,6 +9,8 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import AVFoundation
+
 
 class HomeController: UIViewController {
 
@@ -32,7 +34,6 @@ class HomeController: UIViewController {
     var addHours = 0
     var addMin = 0
     // temps
-    @IBOutlet weak var hoursLabel: UILabel!
     @IBOutlet weak var minutesLabel: UILabel!
     @IBOutlet weak var secondsLabel: UILabel!
     
@@ -49,18 +50,29 @@ class HomeController: UIViewController {
         time = 0
         updateUI()
         timerIsOn = false
-        hoursLabel.text = String("00")
         minutesLabel.text = String("00")
         secondsLabel.text = String("00")
+        
+        
         addHours = 0
         addMin = 0
     }
     
     @IBAction func startTimer(_ sender: UIButton) {
         sender.pulsate()
+        time = addMin * 60
         if timerIsOn == false {
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerDidEnded), userInfo: nil, repeats: true)
-            timerIsOn = true
+            if time == 0 {
+                timer.invalidate()
+                print("Error : time need to be more than 0.")
+                let alertController = UIAlertController(title : "Error", message: "time need to be more than 0", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "Ok", style: .default))
+                
+                self.present(alertController, animated: true, completion: nil)
+            } else {
+                timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerDidEnded), userInfo: nil, repeats: true)
+                timerIsOn = true
+            }
         }
     }
     
@@ -71,34 +83,58 @@ class HomeController: UIViewController {
     }
     
     @objc private func timerDidEnded(){
-        time += 1
+        time -= 1
         updateUI()
+        
+        // Add son ( A FIXER )
+        /*
+        if time == 55 {
+            
+            var audioPlayer = AVAudioPlayer()
+            do{
+                audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "timer", ofType: "mp3")!))
+                audioPlayer.prepareToPlay()
+                audioPlayer.play()
+            } catch {
+                print(error)
+            }
+        }
+         */
+ 
+        if time == 0 {
+            timer.invalidate()
+            print("Good job ! : time's up.")
+            let alertController = UIAlertController(title : "Good job !", message: "time's up.", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: .default))
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     private func updateUI(){
-        var hours: Int
         var min: Int
         var sec: Int
+        var milisec: Int
         
-        hours = time/(60*60)
-        min = (time/60)%60
-        sec = (time % 60)
+        min = time/(60*60)
+        sec = (time/60)%60
+        milisec = (time % 60)
         
         // Règle le pb d'affichage 0:0:0s
-        if hours < 10{
-            hoursLabel.text = String("0\(hours)")
-        } else {
-            hoursLabel.text = String(hours)
-        }
         if min < 10{
             minutesLabel.text = String("0\(min)")
         } else {
             minutesLabel.text = String(min)
         }
         if sec < 10{
-            secondsLabel.text = String("0\(sec)")
+            minutesLabel.text = String("0\(sec)")
         } else {
-            secondsLabel.text = String(sec)
+            minutesLabel.text = String(sec)
+        }
+        if milisec < 10{
+            secondsLabel.text = String("0\(milisec)")
+        } else {
+            secondsLabel.text = String(milisec)
         }
         
     }
@@ -109,40 +145,32 @@ class HomeController: UIViewController {
         if addMin == 5{
             minutesLabel.text = String("0\(addMin)")
         }
-        if addMin <= -1{
+        else if addMin == 0{
+            minutesLabel.text = String("0\(addMin)")
+        }
+        else if addMin < 0{
             addMin = 55
-            addHours -= 1
-            if addHours < 10 {
-                hoursLabel.text = String("0\(addHours)")
-                minutesLabel.text = String(addMin)
-            } else {
-                hoursLabel.text = String(addHours)
-                minutesLabel.text = String(addMin)
-            }
-        } else {
+            minutesLabel.text = String(addMin)
+        }
+        else {
             minutesLabel.text = String(addMin)
         }
     }
     
     @IBAction func addTime(_ sender: UIButton) {
         addMin += 5
-        if addMin == 5{
+        if addMin < 10{
             minutesLabel.text = String("0\(addMin)")
         }
-        if addMin >= 60{
+        else if addMin >= 60{
             addMin = 0
-            addHours += 1
-            if addHours < 10 {
-                hoursLabel.text = String("0\(addHours)")
-                minutesLabel.text = String("0\(addMin)")
-            } else {
-            hoursLabel.text = String(addHours)
-            minutesLabel.text = String(addMin)
-            }
-        } else {
+            minutesLabel.text = String("0\(addMin)")
+        }
+        else {
             minutesLabel.text = String(addMin)
         }
     }
+    
 }
 
 extension UIButton {

@@ -64,6 +64,11 @@ class ProfileController: UIViewController {
             print("Impossible de deconnecter l'utilisateur")
         }
     }
-        
+    
+    // Action to go edit profile
+    @IBAction func goEditProfile(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "editingProfile", sender: self)
+    }
+    
  
 }
