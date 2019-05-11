@@ -17,7 +17,7 @@ class EditProfileController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupTextfieldsManaging()
         //Profil picture
         
         let imageTap = UITapGestureRecognizer(target: self, action: #selector(openImagePicker))
@@ -53,9 +53,18 @@ class EditProfileController: UIViewController  {
      3. Dismiss the view
     */
     
+    @IBOutlet weak var newUsernameTextField: UITextField!
+    @IBOutlet weak var heightTextField: UITextField!
+    @IBOutlet weak var weightTextField: UITextField!
+    @IBOutlet weak var newMailTextField: UITextField!
+    @IBOutlet weak var genderTextField: UITextField!
+    @IBOutlet weak var levelTextField: UITextField!
     
     
     @IBAction func saveInfoButton(_ sender: UIButton) {
+        
+        let ref = Database.database().reference()
+        let userID = Auth.auth().currentUser?.uid
         
         guard let image = default_userView.image else { return }
 
@@ -66,6 +75,38 @@ class EditProfileController: UIViewController  {
             ref.child("users").child(userID!).updateChildValues(["url-img-pp": url ])
             
         }
+        
+        if newUsernameTextField.text != "" {
+            ref.child("users").child(userID!).updateChildValues(["username": newUsernameTextField.text!])
+        } else {
+            print("Aucun changement de : Username")
+        }
+        if newMailTextField.text != "" {
+            ref.child("users").child(userID!).updateChildValues(["email": newMailTextField.text!])
+        } else {
+            print("Aucun changement de : email")
+        }
+        if heightTextField.text != "" {
+            ref.child("users").child(userID!).updateChildValues(["height": heightTextField.text!])
+        } else {
+            print("Aucun changement de : height")
+        }
+        if weightTextField.text != "" {
+            ref.child("users").child(userID!).updateChildValues(["weight": weightTextField.text!])
+        } else {
+            print("Aucun changement de : weight")
+        }
+        if genderTextField.text != "" {
+            ref.child("users").child(userID!).updateChildValues(["gender": genderTextField.text!])
+        } else {
+            print("Aucun changement de : gender")
+        }
+        if levelTextField.text != "" {
+            ref.child("users").child(userID!).updateChildValues(["level": levelTextField.text!])
+        } else {
+            print("Aucun changement de : level")
+        }
+        
         self.performSegue(withIdentifier: "saveEditingProfile", sender: self)
     }
     
@@ -95,6 +136,35 @@ class EditProfileController: UIViewController  {
             }
         }
     }
+    
+    
+    // text reco
+    private func setupTextfieldsManaging() {
+        newUsernameTextField.delegate = self
+        heightTextField.delegate = self
+        weightTextField.delegate = self
+        newMailTextField.delegate = self
+        genderTextField.delegate = self
+        levelTextField.delegate = self
+
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    // MARK: Actions
+    @objc private func hideKeyboard() {
+        newUsernameTextField.resignFirstResponder()
+        heightTextField.resignFirstResponder()
+        weightTextField.resignFirstResponder()
+        newMailTextField.resignFirstResponder()
+        genderTextField.resignFirstResponder()
+        levelTextField.resignFirstResponder()
+    }
+    
+    
+    
+    
 }
 
 extension EditProfileController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -111,4 +181,11 @@ extension EditProfileController: UIImagePickerControllerDelegate, UINavigationCo
         picker.dismiss(animated: true, completion: nil)
     }
 
+}
+
+extension EditProfileController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
