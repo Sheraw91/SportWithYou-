@@ -32,6 +32,24 @@ class EditProfileController: UIViewController  {
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         
+        // affichage de la pp acutelle
+        let ref = Database.database().reference()
+        let userID = Auth.auth().currentUser?.uid
+        
+        ref.child("users").child(userID!).child("url-img-pp").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let item = snapshot.value as? String{
+                
+                let storage = Storage.storage()
+                var reference: StorageReference!
+                reference = Storage.storage().reference(forURL: item)
+                reference.downloadURL { (url, error) in
+                    let data = NSData(contentsOf: url!)
+                    let image = UIImage(data: data! as Data)
+                    self.default_userView.image = image
+                }
+            }
+            
+        })
     }
     
     
