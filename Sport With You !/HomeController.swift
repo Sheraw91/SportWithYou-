@@ -10,10 +10,12 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 import AVFoundation
+import UserNotifications
 
 
 class HomeController: UIViewController {
 
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "home"), tag: 2)
@@ -23,7 +25,36 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Asked for permission to notification
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
+        })
+        // sleep mode disable
+        UIApplication.shared.isIdleTimerDisabled = true
     }
+    // When user leave the home
+    override func viewWillDisappear(_ animated: Bool) {
+        UIApplication.shared.isIdleTimerDisabled = false
+    }
+    // notifications center
+  
+    @IBOutlet weak var notificationStatusLabel: UILabel!
+    var enableNotification = true
+
+    @IBAction func disableNotification(_ sender: UIButton) {
+        var status = "Enable"
+        if enableNotification == true{
+            enableNotification = false
+            status = "Disable"
+        }else if enableNotification == false{
+            enableNotification = true
+            status = "Enable"
+        }
+        notificationStatusLabel.text! = status
+    }
+    
+    // music var
+    var player:AVAudioPlayer = AVAudioPlayer()
+
     
    // TIMER
     
@@ -59,6 +90,21 @@ class HomeController: UIViewController {
     }
     
     @IBAction func startTimer(_ sender: UIButton) {
+        // add notification
+        if enableNotification == true{
+            let content = UNMutableNotificationContent()
+            content.title = "Il est temps de se mettre au sport !"
+            content.subtitle = "Êtes-vous prêt ?"
+            content.body = "Venez battre votre record personnel !"
+            content.badge = 1
+            
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3600, repeats: false)
+            let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        }
+
+        // timer start config
         sender.pulsate()
         time = addMin * 60
         if timerIsOn == false {
@@ -86,20 +132,33 @@ class HomeController: UIViewController {
         time -= 1
         updateUI()
         
-        // Add son ( A FIXER )
-        /*
-        if time == 55 {
-            
-            var audioPlayer = AVAudioPlayer()
-            do{
-                audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "timer", ofType: "mp3")!))
-                audioPlayer.prepareToPlay()
-                audioPlayer.play()
-            } catch {
-                print(error)
+        // Add song ( A FIXER )
+    
+        if time == 11 {
+            do
+            {
+                let audioPath = Bundle.main.path(forResource: "timer", ofType: "mp3")
+                try player = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPath!) as URL)
             }
+            catch
+            {
+                //PROCESS ERROR
+            }
+            
+            let session = AVAudioSession.sharedInstance()
+            
+            do
+            {
+                try session.setCategory(AVAudioSession.Category.playback)
+            }
+            catch
+            {
+                
+            }
+            
+            player.play()
         }
-         */
+        
  
         if time == 0 {
             timer.invalidate()
