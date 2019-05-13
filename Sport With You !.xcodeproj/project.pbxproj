@@ -14,6 +14,7 @@
 		3B0108182281E243005E1CBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0108162281E243005E1CBF /* LaunchScreen.storyboard */; };
 		3B0108202281E2A6005E1CBF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B01081F2281E2A6005E1CBF /* GoogleService-Info.plist */; };
 		3B551B6E2281EB6800BEBA5B /* SigninController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B551B6D2281EB6800BEBA5B /* SigninController.swift */; };
+		3BA4B6BF228965EA00FB0C5D /* ProgressWeightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA4B6BE228965EA00FB0C5D /* ProgressWeightController.swift */; };
 		3BCBE90322856EF40082997A /* timer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3BCBE90222856EF40082997A /* timer.mp3 */; };
 		3BFB520A22838AE50041D872 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB520922838AE50041D872 /* HomeController.swift */; };
 		3BFB520C22841A420041D872 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB520B22841A420041D872 /* ProfileController.swift */; };
@@ -37,6 +38,7 @@
 		3B0108192281E243005E1CBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B01081F2281E2A6005E1CBF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3B551B6D2281EB6800BEBA5B /* SigninController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninController.swift; sourceTree = "<group>"; };
+		3BA4B6BE228965EA00FB0C5D /* ProgressWeightController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressWeightController.swift; sourceTree = "<group>"; };
 		3BCBE90222856EF40082997A /* timer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = timer.mp3; sourceTree = "<group>"; };
 		3BFB520922838AE50041D872 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		3BFB520B22841A420041D872 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				3BFB52172284D53E0041D872 /* EditProfileController.swift */,
 				3BFB520D2284515C0041D872 /* ProgramController.swift */,
 				3BFB520F228451720041D872 /* SharedController.swift */,
+				3BA4B6BE228965EA00FB0C5D /* ProgressWeightController.swift */,
 				3BFB5215228460A20041D872 /* TabBarViewController.swift */,
 				3B0108112281E243005E1CBF /* Main.storyboard */,
 				3B0108142281E243005E1CBF /* Assets.xcassets */,
@@ -216,6 +219,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Sport With You !/Pods-Sport With You !-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
@@ -224,6 +228,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
@@ -242,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA4B6BF228965EA00FB0C5D /* ProgressWeightController.swift in Sources */,
 				3BFB5216228460A20041D872 /* TabBarViewController.swift in Sources */,
 				3BFB5210228451720041D872 /* SharedController.swift in Sources */,
 				3BFB52182284D53E0041D872 /* EditProfileController.swift in Sources */,
