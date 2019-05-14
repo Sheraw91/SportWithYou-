@@ -15,6 +15,8 @@
 		3B0108202281E2A6005E1CBF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B01081F2281E2A6005E1CBF /* GoogleService-Info.plist */; };
 		3B551B6E2281EB6800BEBA5B /* SigninController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B551B6D2281EB6800BEBA5B /* SigninController.swift */; };
 		3B945669228AA62B002E4BEE /* timer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3B945668228AA62A002E4BEE /* timer.mp3 */; };
+		3B94566B228ABB9D002E4BEE /* configGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94566A228ABB9D002E4BEE /* configGif.swift */; };
+		3B94566D228ABC13002E4BEE /* pp.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3B94566C228ABC13002E4BEE /* pp.gif */; };
 		3BA4B6BF228965EA00FB0C5D /* ProgressWeightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA4B6BE228965EA00FB0C5D /* ProgressWeightController.swift */; };
 		3BFB520A22838AE50041D872 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB520922838AE50041D872 /* HomeController.swift */; };
 		3BFB520C22841A420041D872 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB520B22841A420041D872 /* ProfileController.swift */; };
@@ -39,6 +41,8 @@
 		3B01081F2281E2A6005E1CBF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3B551B6D2281EB6800BEBA5B /* SigninController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninController.swift; sourceTree = "<group>"; };
 		3B945668228AA62A002E4BEE /* timer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = timer.mp3; path = ../../assets/sound/timer.mp3; sourceTree = "<group>"; };
+		3B94566A228ABB9D002E4BEE /* configGif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = configGif.swift; sourceTree = "<group>"; };
+		3B94566C228ABC13002E4BEE /* pp.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pp.gif; sourceTree = "<group>"; };
 		3BA4B6BE228965EA00FB0C5D /* ProgressWeightController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressWeightController.swift; sourceTree = "<group>"; };
 		3BFB520922838AE50041D872 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		3BFB520B22841A420041D872 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 				3B01080F2281E243005E1CBF /* LoginController.swift */,
 				3B551B6D2281EB6800BEBA5B /* SigninController.swift */,
 				3BFB520922838AE50041D872 /* HomeController.swift */,
+				3B94566A228ABB9D002E4BEE /* configGif.swift */,
 				3BFB520B22841A420041D872 /* ProfileController.swift */,
 				3BFB52172284D53E0041D872 /* EditProfileController.swift */,
 				3BFB520D2284515C0041D872 /* ProgramController.swift */,
@@ -114,6 +119,7 @@
 				3B0108192281E243005E1CBF /* Info.plist */,
 				3B01081F2281E2A6005E1CBF /* GoogleService-Info.plist */,
 				3B945668228AA62A002E4BEE /* timer.mp3 */,
+				3B94566C228ABC13002E4BEE /* pp.gif */,
 			);
 			path = "Sport With You !";
 			sourceTree = "<group>";
@@ -183,6 +189,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B94566D228ABC13002E4BEE /* pp.gif in Resources */,
 				3B0108182281E243005E1CBF /* LaunchScreen.storyboard in Resources */,
 				3B0108202281E2A6005E1CBF /* GoogleService-Info.plist in Resources */,
 				3B0108152281E243005E1CBF /* Assets.xcassets in Resources */,
@@ -254,6 +261,7 @@
 				3BFB520C22841A420041D872 /* ProfileController.swift in Sources */,
 				3BFB520A22838AE50041D872 /* HomeController.swift in Sources */,
 				3BFB520E2284515C0041D872 /* ProgramController.swift in Sources */,
+				3B94566B228ABB9D002E4BEE /* configGif.swift in Sources */,
 				3B0108102281E243005E1CBF /* LoginController.swift in Sources */,
 				3B551B6E2281EB6800BEBA5B /* SigninController.swift in Sources */,
 				3B01080E2281E243005E1CBF /* AppDelegate.swift in Sources */,
