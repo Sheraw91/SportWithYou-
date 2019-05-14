@@ -33,10 +33,21 @@ class ProgressWeightController: UIViewController {
     
     @IBAction func loadProgress(_ sender: UIButton) {
         let userID = Auth.auth().currentUser?.uid
-        let ref = Database.database().reference().child("users").child(userID!)
+        let ref = Database.database().reference().child("users").child(userID!).child("weight-progress")
         ref.observeSingleEvent(of: .value, with: { snapshot in
             if let objects = snapshot.children.allObjects as? [DataSnapshot] {
-                print(objects)
+                ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                    for var j in 0..<(objects.count){
+                        print(objects[j].value!)
+                        j = j + 1
+                    }
+//                    for child in snapshot.children {
+//                        let snap = child as! DataSnapshot
+//                        let key = snap.key
+//                        let value = snap.value
+//                        print("value = \(value!)")
+//                    }
+                })
             }
         })
     
