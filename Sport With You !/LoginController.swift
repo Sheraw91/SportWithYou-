@@ -9,7 +9,6 @@
 import UIKit
 import FirebaseAuth
 
-
 class LoginController: UIViewController {
 
     // Buttons

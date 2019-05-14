@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class SharedController: UIViewController {
 
     required init?(coder aDecoder: NSCoder) {

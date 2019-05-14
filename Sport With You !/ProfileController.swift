@@ -77,6 +77,7 @@ class ProfileController: UIViewController {
                             let data = NSData(contentsOf: url!)
                             let image = UIImage(data: data! as Data)
                             self.profilePictureImageView.image = image
+                            
                         }
                     }
                 

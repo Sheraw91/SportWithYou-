@@ -14,16 +14,34 @@ import Charts
 
 class ProgressWeightController: UIViewController {
 
+    @IBOutlet weak var changeLabel: UILabel!
     @IBOutlet weak var currentWeightTextField: UITextField!
     @IBOutlet weak var lineChartView: LineChartView!
     
-     var numbers : [Double] = []
+    @IBAction func backButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "goToHome3", sender: self)
+
+    }
+    
+    var numbers : [Double] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextfieldsManaging()
-
     }
+    
+    
+    @IBAction func loadProgress(_ sender: UIButton) {
+        let userID = Auth.auth().currentUser?.uid
+        let ref = Database.database().reference().child("users").child(userID!)
+        ref.observeSingleEvent(of: .value, with: { snapshot in
+            if let objects = snapshot.children.allObjects as? [DataSnapshot] {
+                print(objects)
+            }
+        })
+    
+    }
+    
     
     @IBAction func addWeight(_ sender: UIButton) {
         
@@ -31,6 +49,16 @@ class ProgressWeightController: UIViewController {
         let input = Double(currentWeightTextField.text!) // get input of textfield
         numbers.append(input!) // Add data to array
         updateGraph()
+        
+        // Add to database
+        let ref = Database.database().reference()
+        let userID = Auth.auth().currentUser?.uid
+        ref.child("users").child(userID!).updateChildValues(["weight-progress": numbers])
+        
+        /*  Try to catch values */
+        
+        
+        
     }
     
     func updateGraph(_ count: Int = 20){
@@ -53,7 +81,7 @@ class ProgressWeightController: UIViewController {
         
         data.addDataSet(line1) //Adds the line to the dataSet
         
-        self.lineChartView.data = data
+        self.lineChartView.data = data // draw
     }
     
     

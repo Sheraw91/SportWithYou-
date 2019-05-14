@@ -22,8 +22,11 @@ class HomeController: UIViewController {
     }
     
     
+    @IBOutlet weak var gifImae: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        gifImae.loadGif(name: "pp")
         
         //Asked for permission to notification
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
@@ -98,7 +101,7 @@ class HomeController: UIViewController {
             content.body = "Venez battre votre record personnel !"
             content.badge = 1
             
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3600, repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 82800, repeats: true)
             let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
             
             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
@@ -106,6 +109,7 @@ class HomeController: UIViewController {
 
         // timer start config
         sender.pulsate()
+        // Music start
         time = addMin * 60
         if timerIsOn == false {
             if time == 0 {
@@ -134,7 +138,7 @@ class HomeController: UIViewController {
         
         // Add song ( A FIXER )
     
-        if time == 11 {
+        if time == 10 {
             do
             {
                 let audioPath = Bundle.main.path(forResource: "timer", ofType: "mp3")
@@ -229,6 +233,26 @@ class HomeController: UIViewController {
             minutesLabel.text = String(addMin)
         }
     }
+    
+    
+    /*@IBAction func addPgrm(_ sender: UIButton) {
+        let ref = Database.database().reference()
+        let userID = Auth.auth().currentUser?.uid
+        
+        // Beginner 5 min
+        var pgrm1 : [String] = ["2","20","10","plank","crunch","mountains climbers","v-ups","crunch obliques"]
+        var pgrm2 : [String] = ["2","20","10","squat-jump","lunges","chair","squat-sumo","calves"]
+        var pgrm3 : [String] = ["2","20","10","push up","burpees","diamond push up","dips","large push up"]
+        // Beginner 10 min
+        var pgrm4 : [String] = ["2","20","10","plank","crunch","mountains climbers","v-ups","crunch obliques"]
+        var pgrm5 : [String] = ["2","20","10","squat-jump","lunges","chair","squat-sumo","calves"]
+        var pgrm6 : [String] = ["2","20","10","push up","burpees","diamond push up","dips","large push up"]
+
+        
+        ref.child("programs").setValue(["abs-beginner-5": pgrm1, "legs-beginner-5": pgrm2, "arms-beginner-5": pgrm3])
+    }*/
+        
+
     
 }
 

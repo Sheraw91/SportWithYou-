@@ -95,8 +95,11 @@ class SigninController: UIViewController {
                     
                         let ref = Database.database().reference()
                         let userID = Auth.auth().currentUser?.uid
-                    
-                        ref.child("users").child(userID!).setValue(["firstname": self.firstnameTextfield.text!, "lastname": self.lastnameTextfield.text!, "username": self.usernameTextfield.text!, "email": self.emailTextfield.text!, "country": self.countryTextfield.text!, "birthday": self.birthdayTextfield.text!, "url-img-pp": "https://firebasestorage.googleapis.com/v0/b/sportwithyou-ynov.appspot.com/o/profile_default.png?alt=media&token=8703a325-8607-43f8-8d75-b4c6596e01aa", "weight": 0, "height": 0, "gender": "none", "level": "beginner"])
+                        
+                        let raz = 0
+                        
+                        
+                        ref.child("users").child(userID!).setValue(["firstname": self.firstnameTextfield.text!, "lastname": self.lastnameTextfield.text!, "username": self.usernameTextfield.text!, "email": self.emailTextfield.text!, "country": self.countryTextfield.text!, "birthday": self.birthdayTextfield.text!, "url-img-pp": "https://firebasestorage.googleapis.com/v0/b/sportwithyou-ynov.appspot.com/o/profile_default.png?alt=media&token=8703a325-8607-43f8-8d75-b4c6596e01aa", "weight": 0, "height": 0, "gender": "none", "level": "beginner", "weight-progress": raz])
                         
                         print("Inscription de \(self.usernameTextfield.text ?? "no name") réussie ✅")
 
