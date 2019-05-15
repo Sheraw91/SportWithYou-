@@ -28,26 +28,47 @@ class ProgressWeightController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextfieldsManaging()
-    }
-    
-    
-    @IBAction func loadProgress(_ sender: UIButton) {
+        
+        /*  Catch values for update graph */
         let userID = Auth.auth().currentUser?.uid
+        var recapWeight: [Any] = []
         let ref = Database.database().reference().child("users").child(userID!).child("weight-progress")
         ref.observeSingleEvent(of: .value, with: { snapshot in
             if let objects = snapshot.children.allObjects as? [DataSnapshot] {
                 ref.observeSingleEvent(of: .value, with: { (snapshot) in
                     for var j in 0..<(objects.count){
                         //print(objects[j].value!)
-                        let progressWeight = [objects[j].value!]
-                        print(progressWeight)
+                        // let progressWeight = [objects[j].value!]
+                        recapWeight.append(objects[j].value!)
                         j = j + 1
                     }
+                    // Add value to graph
+                    print(recapWeight)
+                    self.numbers = recapWeight as! [Double]
+                    self.updateGraph()
                 })
             }
         })
     }
     
+//
+//    @IBAction func loadProgress(_ sender: UIButton) {
+//        let userID = Auth.auth().currentUser?.uid
+//        let ref = Database.database().reference().child("users").child(userID!).child("weight-progress")
+//        ref.observeSingleEvent(of: .value, with: { snapshot in
+//            if let objects = snapshot.children.allObjects as? [DataSnapshot] {
+//                ref.observeSingleEvent(of: .value, with: { (snapshot) in
+//                    for var j in 0..<(objects.count){
+//                        //print(objects[j].value!)
+//                        let progressWeight = [objects[j].value!]
+//                        print(progressWeight)
+//                        j = j + 1
+//                    }
+//                })
+//            }
+//        })
+//    }
+//
     
     @IBAction func addWeight(_ sender: UIButton) {
         
@@ -60,26 +81,8 @@ class ProgressWeightController: UIViewController {
         let refe = Database.database().reference()
         let userID = Auth.auth().currentUser?.uid
         refe.child("users").child(userID!).updateChildValues(["weight-progress": numbers])
-        
-        /*  Try to catch values */
-        var recapWeight: [Any] = []
-        let ref = Database.database().reference().child("users").child(userID!).child("weight-progress")
-        ref.observeSingleEvent(of: .value, with: { snapshot in
-            if let objects = snapshot.children.allObjects as? [DataSnapshot] {
-                ref.observeSingleEvent(of: .value, with: { (snapshot) in
-                    for var j in 0..<(objects.count){
-                        //print(objects[j].value!)
-                       // let progressWeight = [objects[j].value!]
-                        recapWeight.append(objects[j].value!)
-                        j = j + 1
-                    }
-                    print(recapWeight)
-                })
-            }
-        })
-        
-        
     }
+    
     
     func updateGraph(_ count: Int = 20){
         var lineChartEntry = [ChartDataEntry]()
