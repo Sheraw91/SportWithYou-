@@ -38,19 +38,14 @@ class ProgressWeightController: UIViewController {
             if let objects = snapshot.children.allObjects as? [DataSnapshot] {
                 ref.observeSingleEvent(of: .value, with: { (snapshot) in
                     for var j in 0..<(objects.count){
-                        print(objects[j].value!)
+                        //print(objects[j].value!)
+                        let progressWeight = [objects[j].value!]
+                        print(progressWeight)
                         j = j + 1
                     }
-//                    for child in snapshot.children {
-//                        let snap = child as! DataSnapshot
-//                        let key = snap.key
-//                        let value = snap.value
-//                        print("value = \(value!)")
-//                    }
                 })
             }
         })
-    
     }
     
     
@@ -62,12 +57,26 @@ class ProgressWeightController: UIViewController {
         updateGraph()
         
         // Add to database
-        let ref = Database.database().reference()
+        let refe = Database.database().reference()
         let userID = Auth.auth().currentUser?.uid
-        ref.child("users").child(userID!).updateChildValues(["weight-progress": numbers])
+        refe.child("users").child(userID!).updateChildValues(["weight-progress": numbers])
         
         /*  Try to catch values */
-        
+        var recapWeight: [Any] = []
+        let ref = Database.database().reference().child("users").child(userID!).child("weight-progress")
+        ref.observeSingleEvent(of: .value, with: { snapshot in
+            if let objects = snapshot.children.allObjects as? [DataSnapshot] {
+                ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                    for var j in 0..<(objects.count){
+                        //print(objects[j].value!)
+                       // let progressWeight = [objects[j].value!]
+                        recapWeight.append(objects[j].value!)
+                        j = j + 1
+                    }
+                    print(recapWeight)
+                })
+            }
+        })
         
         
     }
