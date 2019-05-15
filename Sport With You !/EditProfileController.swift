@@ -12,8 +12,11 @@ import Firebase
 class EditProfileController: UIViewController, UIPickerViewDataSource,  UIPickerViewDelegate  {
     
     //Picker View
-    var level = ["Beginner","Scaled","Advanced"]
-    var picker = UIPickerView()
+    let level = ["Beginner","Scaled","Advanced"]
+    let gender = ["Male", "Female", "Other"]
+    let piker1 = UIPickerView()
+    let piker2 = UIPickerView()
+
     
     var imagePicker:UIImagePickerController!
     @IBOutlet weak var default_userView: UIImageView!
@@ -25,10 +28,23 @@ class EditProfileController: UIViewController, UIPickerViewDataSource,  UIPicker
         
         //Picker View
         
-        picker.delegate = self
-        picker.dataSource = self
+        piker1.delegate = self
+        piker1.dataSource = self
         
-        levelTextField.inputView = picker
+        piker2.delegate = self
+        piker2.dataSource = self
+        
+        levelTextField.inputView = piker1
+        genderTextField.inputView = piker1
+        
+        levelTextField.inputView = piker2
+        genderTextField.inputView = piker2
+        
+        piker1.tag = 1
+        piker2.tag = 2
+        
+        levelTextField.inputView = piker1
+        genderTextField.inputView = piker2
         
         //Profil picture
         
@@ -192,21 +208,46 @@ class EditProfileController: UIViewController, UIPickerViewDataSource,  UIPicker
         levelTextField.resignFirstResponder()
     }
     
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-        return level.count
-    }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        levelTextField.text = level[row]
-        self.view.endEditing(false)
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        
+        
+        if pickerView == piker1 {
+            return level.count
+            
+        } else if pickerView == piker2{
+            return gender.count
+        }
+        
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return level[row]
+        
+        
+        if pickerView == piker1 {
+            return level[row]
+            
+        } else if pickerView == piker2{
+            return gender[row]
+        }
+        return ""
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == piker1 {
+            levelTextField.text = level[row]
+            self.view.endEditing(false)
+        } else if pickerView == piker2{
+            genderTextField.text = gender[row]
+            self.view.endEditing(false)
+        }
     }
     
     
