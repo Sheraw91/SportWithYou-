@@ -237,21 +237,36 @@ class HomeController: UIViewController {
     
     /*@IBAction func addPgrm(_ sender: UIButton) {
         let ref = Database.database().reference()
-        let userID = Auth.auth().currentUser?.uid
         
         // Beginner 5 min
-        var pgrm1 : [String] = ["2","20","10","plank","crunch","mountains climbers","v-ups","crunch obliques"]
-        var pgrm2 : [String] = ["2","20","10","squat-jump","lunges","chair","squat-sumo","calves"]
-        var pgrm3 : [String] = ["2","20","10","push up","burpees","diamond push up","dips","large push up"]
+        var pgrm1Beg5 : [String] = ["2","20","10","plank","crunch","mountains climbers","v-ups","crunch obliques"]
+        var pgrm2Beg5 : [String] = ["2","20","10","squat-jump","lunges","chair","squat-sumo","calves"]
+        var pgrm3Beg5 : [String] = ["2","20","10","push up","burpees","diamond push up","dips","large push up"]
+        
         // Beginner 10 min
-        var pgrm4 : [String] = ["2","20","10","plank","crunch","mountains climbers","v-ups","crunch obliques"]
-        var pgrm5 : [String] = ["2","20","10","squat-jump","lunges","chair","squat-sumo","calves"]
-        var pgrm6 : [String] = ["2","20","10","push up","burpees","diamond push up","dips","large push up"]
+        var pgrm1Beg10 : [String] = ["2","20","10","Plank","Mountains climbers","Crunch","V ups","Superman","Oblique Crunch","Plank Up/Down","Cisors","Bike","Superman"]
+        var pgrm2Beg10 : [String] = ["1","30","10","Assouplissment","Assouplissment","Squats","Squats","Battements côtés","Calves","Calves","Squats sumo","Fentes","Fentes","Jumping Squats","Lateral Squats","Lateral Squats","Chair","Chair"]
+        var pgrm3Beg10 : [String] = ["4","20","10","Pushup","Diamond pushup","Dips","Pushup","Large Pushup","Burpees"]
+        
+        // Beginner 15 min
+        var pgrm1Beg15 : [String] = ["1","40","20","Plank","Crunch","V ups","Mountains climbers","Cisors","Oblique Crunch","Plank Up/Down","Bike","Superman"]
+        
+        
+        // Intermédiaire 5 min
+        var pgrm1Int5 : [String] = ["1","20","10","Gainage","Superman","Crunch","V_ups","Mountains climbers","Crunch obliques","Monté-descente sur avant-bras","Superman ","Gainage","Ciseaux"]
+        var pgrm2Int5 : [String] = ["1","20","10","Squat jumps","Lounges","Seat","Squat sumo","Mollets debout"]
+        var pgrm3Int5 : [String] = ["1","30","5","Pompes","Burpees","Pompes diamant","Dips","Pompes prise large","Repos","Pompes prise large","Pompes","Pompes diamant","Burpees"]
+        
+        // Confirmé 5 min ( a finir )
+        var pgrm1Conf5 : [String] = ["1","30","5","Gainage","Crunch","Mountains climbers","V_ups","Crunch obliques"]
+        var pgrm2Conf5 : [String] = ["1","30","5","Squat jumps","Lounges","Seat","Squat sumo","Mollets debout"]
+        var pgrm3Conf5 : [String] = ["1","25","5","Pompes prise large","","Pompes diamant","Dips","Pompes","Curl","Burpees","","","Pompes"]
+        
+        ref.child("programs").setValue(["abs-beginner-5": pgrm1Beg5, "legs-beginner-5": pgrm2Beg5, "arms-beginner-5": pgrm3Beg5, "abs-beginner-10": pgrm1Beg10, "abs-intermediaire-5": pgrm1Int5, "legs-intermediaire-5": pgrm2Int5, "arms-intermediaire-5": pgrm3Int5, "abs-confirme-5": pgrm1Conf5, "legs-confirme-5": pgrm2Conf5, "arms-confirme-5": pgrm3Conf5])
 
-        
-        ref.child("programs").setValue(["abs-beginner-5": pgrm1, "legs-beginner-5": pgrm2, "arms-beginner-5": pgrm3])
-    }*/
-        
+    }
+
+        */
 
     
 }

@@ -9,8 +9,12 @@
 import UIKit
 import Firebase
 
-class EditProfileController: UIViewController  {
-
+class EditProfileController: UIViewController, UIPickerViewDataSource,  UIPickerViewDelegate  {
+    
+    //Picker View
+    var level = ["Beginner","Scaled","Advanced"]
+    var picker = UIPickerView()
+    
     var imagePicker:UIImagePickerController!
     @IBOutlet weak var default_userView: UIImageView!
     @IBOutlet weak var tapToChangeProfileButton: UIButton!
@@ -18,6 +22,14 @@ class EditProfileController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextfieldsManaging()
+        
+        //Picker View
+        
+        picker.delegate = self
+        picker.dataSource = self
+        
+        levelTextField.inputView = picker
+        
         //Profil picture
         
         let imageTap = UITapGestureRecognizer(target: self, action: #selector(openImagePicker))
@@ -180,7 +192,22 @@ class EditProfileController: UIViewController  {
         levelTextField.resignFirstResponder()
     }
     
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
     
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        return level.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        levelTextField.text = level[row]
+        self.view.endEditing(false)
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return level[row]
+    }
     
     
 }
