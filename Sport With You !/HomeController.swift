@@ -21,7 +21,7 @@ class HomeController: UIViewController {
         tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "home"), tag: 2)
     }
     
-    
+
     
     @IBOutlet weak var gifImae: UIImageView!
     
@@ -57,21 +57,7 @@ class HomeController: UIViewController {
   
     @IBOutlet weak var levelLabel: UILabel!
     
-    @IBOutlet weak var notificationStatusLabel: UILabel!
-    var enableNotification = true
 
-    @IBAction func disableNotification(_ sender: UIButton) {
-        var status = "Enable"
-        if enableNotification == true{
-            enableNotification = false
-            status = "Disable"
-        }else if enableNotification == false{
-            enableNotification = true
-            status = "Enable"
-        }
-        notificationStatusLabel.text! = status
-    }
-    
     // music var
     var player:AVAudioPlayer = AVAudioPlayer()
 
@@ -84,6 +70,7 @@ class HomeController: UIViewController {
     // gestion du temps
     var addHours = 0
     public var addMin = 0
+    public var getMin = 0
     // temps
     @IBOutlet weak var minutesLabel: UILabel!
     @IBOutlet weak var secondsLabel: UILabel!
@@ -102,26 +89,46 @@ class HomeController: UIViewController {
         timerIsOn = false
         minutesLabel.text = String("00")
         secondsLabel.text = String("00")
-        
-        
         addHours = 0
         addMin = 0
     }
     
     /* START TIMER */
-
+    public var notifs = true
 
     @IBAction func startTimer(_ sender: UIButton) {
-        // timer start config
+        // Error if time is nil
         time = addMin * 60
-    
+        if time == 0 {
+            timer.invalidate()
+            print("Error : time need to be more than 0.")
+            let alertController = UIAlertController(title : "Error", message: "time need to be more than 0. Reset the timer.", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: .default))
+            self.present(alertController, animated: true, completion: nil)
+            addMin = 0
+            time = 0
+            timer.invalidate()
+            updateUI()
+        } else {
+        }
+        // conditions notifs alert
+        if notifs == true {
+            conditionAlert(title: "Please read the terms of use before starting the training.", message:"https://www.sportwithyou-ynov.firebaseapp.com/conditions \n You can disable notifications on your profile.")
+        } else {
+        }
+        // timer start config
+        getMin = addMin
         if timerIsOn == false {
             if time == 0 {
                 timer.invalidate()
                 print("Error : time need to be more than 0.")
-                let alertController = UIAlertController(title : "Error", message: "time need to be more than 0", preferredStyle: .alert)
+                let alertController = UIAlertController(title : "Error", message: "time need to be more than 0. Reset the timer.", preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "Ok", style: .default))
                 self.present(alertController, animated: true, completion: nil)
+                addMin = 0
+                time = 0
+                timer.invalidate()
+                updateUI()
             } else {
                 timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerDidEnded), userInfo: nil, repeats: true)
                 timerIsOn = true
@@ -137,11 +144,292 @@ class HomeController: UIViewController {
     var prog : [String] = []
     public var z = true
     public var i = 0
-    
+    public var display = 0
     
     @objc private func timerDidEnded(){
         updateUI()
-        
+        /* BIDOUILLAGE ACTIVÉ */
+       
+        if (self.levelLabel.text!) == "Beginner" {
+            if getMin == 5 { // ( 5min = 300s )
+                if time >= 280{
+                    if display == 0{
+                        gifImae.loadGif(name: "ex1")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 270 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 250 {
+                    if display == 0{
+                        gifImae.loadGif(name: "ex2")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 240 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 220 {
+                    if display == 0{
+                        gifImae.loadGif(name: "ex3")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 210 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 190 {
+                    if display == 0{
+                        gifImae.loadGif(name: "ex4")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 180 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 160 {
+                    if display == 0{
+                        gifImae.loadGif(name: "ex1")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 150 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 130 {
+                    if display == 0{
+                        gifImae.loadGif(name: "ex2")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 120 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 100 {
+                    if display == 0{
+                        gifImae.loadGif(name: "ex3")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 90 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 70 {
+                    if display == 0{
+                        gifImae.loadGif(name: "ex4")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 60 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 40 {
+                    if display == 0{
+                        gifImae.loadGif(name: "ex5")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 30 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 10 {
+                    if display == 0{
+                        gifImae.loadGif(name: "ex1")
+                        display += 1
+                    } else {
+                    }
+                }
+            }
+            if getMin == 10 { // ( 10min = 600s )
+                if time >= 580{
+                    if display == 0{
+                        gifImae.loadGif(name: "exercises_c (10)")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 570 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                    
+                } else if time >= 550{
+                    if display == 0{
+                        gifImae.loadGif(name: "exercises_c (10)")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 540 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 520 {
+                    if display == 0{
+                        gifImae.loadGif(name: "exercises_c (10)")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 510 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 490 {
+                    if display == 0{
+                        gifImae.loadGif(name: "exercises_c (10)")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 480 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 460 {
+                    if display == 0{
+                        gifImae.loadGif(name: "exercises_c (10)")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 450 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 430 {
+                    if display == 0{
+                        gifImae.loadGif(name: "exercises_c (10)")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 420{
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 400 {
+                    if display == 0{
+                        gifImae.loadGif(name: "exercises_c (10)")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 390 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 370 {
+                    if display == 0{
+                        gifImae.loadGif(name: "exercises_c (10)")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 360 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 340 {
+                    if display == 0{
+                        gifImae.loadGif(name: "exercises_c (10)")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 330 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 310 {
+                    if display == 0{
+                        gifImae.loadGif(name: "exercises_c (10)")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 300 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 10 {
+                    if display == 0{
+                        gifImae.loadGif(name: "exercises_c (10)")
+                        display += 1
+                    } else {
+                    }
+                }
+                if time >= 280{
+                    if display == 0{
+                        gifImae.loadGif(name: "exercises_c (10)")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 270 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 250 {
+                    if display == 0{
+                        gifImae.loadGif(name: "exercises_c (10)")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 240 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 220 {
+                    if display == 0{
+                        gifImae.loadGif(name: "exercises_c (10)")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 210 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 190 {
+                    if display == 0{
+                        gifImae.loadGif(name: "exercises_c (10)")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 180 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 160 {
+                    if display == 0{
+                        gifImae.loadGif(name: "exercises_c (10)")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 150 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 130 {
+                    if display == 0{
+                        gifImae.loadGif(name: "exercises_c (10)")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 120 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 100 {
+                    if display == 0{
+                        gifImae.loadGif(name: "exercises_c (10)")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 90 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 70 {
+                    if display == 0{
+                        gifImae.loadGif(name: "exercises_c (10)")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 60 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 40 {
+                    if display == 0{
+                        gifImae.loadGif(name: "exercises_c (10)")
+                        display += 1
+                    } else {
+                    }
+                } else if time >= 30 {
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                } else if time >= 10 {
+                    if display == 0{
+                        gifImae.loadGif(name: "exercises_c (10)")
+                        display += 1
+                    } else {
+                    }
+                }
+            }
+        }
         
         time -= 1
         // Add song
@@ -277,6 +565,22 @@ class HomeController: UIViewController {
     }
  */
     
+    func conditionAlert(title:String, message:String)
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        //CREATING ON BUTTON
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            self.notifs = true
+        }))
+        alert.addAction(UIAlertAction(title: "Don't ask again", style: UIAlertAction.Style.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            self.notifs = false
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+
     
 }
 /*
