@@ -83,11 +83,6 @@ class ProfileController: UIViewController {
                 
                 })
                 
-                
-                
-                
-                
-                
             }
             
             
@@ -112,24 +107,6 @@ class ProfileController: UIViewController {
     @IBAction func goEditProfile(_ sender: UIButton) {
         self.performSegue(withIdentifier: "editingProfile", sender: self)
     }
-    
  
-    @IBOutlet weak var notificationStatusLabel: UILabel!
-    
-
-    public var enableNotification = true
-    
-
-    @IBAction func disableNotification(_ sender: UIButton) {
-        var status = "Enable"
-        if enableNotification == true{
-            enableNotification = false
-            status = "Disable"
-        }else if enableNotification == false{
-            enableNotification = true
-            status = "Enable"
-        }
-        notificationStatusLabel.text! = status
-    }
     
 }

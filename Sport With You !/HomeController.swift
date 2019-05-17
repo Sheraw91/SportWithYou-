@@ -21,21 +21,26 @@ class HomeController: UIViewController {
         tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "home"), tag: 2)
     }
     
-
-    
     @IBOutlet weak var gifImae: UIImageView!
+    
+    // add notification
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //gifImae.loadGif(name: "exercises_c (10)")
+        // clean badges
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        
+        // hide button
+        resetButton.isHidden = true
+        pauseButton.isHidden = true
         
         let ref = Database.database().reference()
         let userID = Auth.auth().currentUser?.uid
         ref.child("users").child(userID!).observeSingleEvent(of: .value) { (snapshot) in
             let value = snapshot.value as? NSDictionary
-            
             let level = value?["level"] as? String ?? "no level :("
-            
             self.levelLabel.text = level
         }
         
@@ -78,7 +83,12 @@ class HomeController: UIViewController {
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var pauseButton: UIButton!
-    //ajouter et enlever temps
+    //action buttons
+    @IBOutlet weak var plusbutton: UIButton!
+    @IBOutlet weak var lessButton: UIButton!
+    
+
+    
 
     
    // Timer configuration
@@ -91,12 +101,30 @@ class HomeController: UIViewController {
         secondsLabel.text = String("00")
         addHours = 0
         addMin = 0
+        // hide button
+        resetButton.isHidden = true
+        pauseButton.isHidden = true
+        // display button +/-
+        plusbutton.isHidden = false
+        lessButton.isHidden = false
+        //hide gif when ax stop
+        gifImae.isHidden = true
     }
     
     /* START TIMER */
     public var notifs = true
 
     @IBAction func startTimer(_ sender: UIButton) {
+        let content = UNMutableNotificationContent()
+        content.title = "Vous êtes encore la ?"
+        content.subtitle = "Il est temps de se remettre au sport !"
+        content.body = "Venez battre votre reccord personnel :)"
+        content.badge = 1
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         // Error if time is nil
         time = addMin * 60
         if time == 0 {
@@ -130,6 +158,15 @@ class HomeController: UIViewController {
                 timer.invalidate()
                 updateUI()
             } else {
+                // display button
+                resetButton.isHidden = false
+                pauseButton.isHidden = false
+                // hide button +/-
+                plusbutton.isHidden = true
+                lessButton.isHidden = true
+                //hide gif when ax stop
+                gifImae.isHidden = false
+                // start timer
                 timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerDidEnded), userInfo: nil, repeats: true)
                 timerIsOn = true
             }
@@ -234,6 +271,7 @@ class HomeController: UIViewController {
                     gifImae.loadGif(name: "pause")
                     display = 0
                 } else if time >= 10 {
+                    //timeOut()
                     if display == 0{
                         gifImae.loadGif(name: "ex1")
                         display += 1
@@ -251,7 +289,6 @@ class HomeController: UIViewController {
                 } else if time >= 570 {
                     gifImae.loadGif(name: "pause")
                     display = 0
-                    
                 } else if time >= 550{
                     if display == 0{
                         gifImae.loadGif(name: "exercises_c (10)")
@@ -422,6 +459,7 @@ class HomeController: UIViewController {
                     gifImae.loadGif(name: "pause")
                     display = 0
                 } else if time >= 10 {
+                   // timeOut()
                     if display == 0{
                         gifImae.loadGif(name: "exercises_c (10)")
                         display += 1
@@ -432,32 +470,6 @@ class HomeController: UIViewController {
         }
         
         time -= 1
-        // Add song
-        if time == 11 {
-            do
-            {
-                let audioPath = Bundle.main.path(forResource: "timer", ofType: "mp3")
-                try player = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPath!) as URL)
-            }
-            catch
-            {
-                //PROCESS ERROR
-            }
-            
-            let session = AVAudioSession.sharedInstance()
-            
-            do
-            {
-                try session.setCategory(AVAudioSession.Category.playback)
-            }
-            catch
-            {
-                
-            }
-            
-            player.play()
-        }
-
  
         if time == 0 {
             timer.invalidate()
@@ -466,11 +478,44 @@ class HomeController: UIViewController {
             alertController.addAction(UIAlertAction(title: "Ok", style: .default))
             
             self.present(alertController, animated: true, completion: nil)
+            // hide button
+            resetButton.isHidden = true
+            pauseButton.isHidden = true
+            // display button +/-
+            plusbutton.isHidden = false
+            lessButton.isHidden = false
+            //hide gif when ax stop
+            gifImae.isHidden = true
+        }
+    }
+        
+
+
+    /*func timeOut() {
+        do
+        {
+            let audioPath = Bundle.main.path(forResource: "timer", ofType: "mp3")
+            try player = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPath!) as URL)
+        }
+        catch
+        {
+            //PROCESS ERROR
         }
         
+        let session = AVAudioSession.sharedInstance()
         
-    }
-    
+        do
+        {
+            try session.setCategory(AVAudioSession.Category.playback)
+        }
+        catch
+        {
+            
+        }
+        
+        player.play()
+    }*/
+
     private func updateUI(){
         var min: Int
         var sec: Int
@@ -531,42 +576,8 @@ class HomeController: UIViewController {
         }
     }
     
-    /*
-    private func getEx() {
-        var z = true
-        if (self.levelLabel.text!) == "Beginner" && z == true{
-            let userID = Auth.auth().currentUser?.uid
-            var recapProg: [Any] = []
-            let ref = Database.database().reference().child("programs").child("abs-beginner-10")
-            ref.observeSingleEvent(of: .value, with: { snapshot in
-                if let objects = snapshot.children.allObjects as? [DataSnapshot] {
-                    ref.observeSingleEvent(of: .value, with: { (snapshot) in
-                        for var j in 0..<(objects.count){
-                            recapProg.append(objects[j].value!)
-                            j = j + 1
-                        }
-                        self.prog = recapProg as! [String]
-                        let nbrep = Int(self.prog[0])
-                        let te = Int(self.prog[1])
-                        let tr = Int(self.prog[2])
-                        print(self.prog)
-                        print("\(nbrep) \(te) \(tr)")
-                        self.gifImae.loadGif(name: "pause")
-                        self.time = te!
-                        self.updateUI()
-                        z = false
-                    })
-                }
-            })
-            
-        } else {
-            print("shit")
-        }
-    }
- */
-    
-    func conditionAlert(title:String, message:String)
-    {
+        /* NOTIFICATIONS */
+    func conditionAlert(title:String, message:String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         
         //CREATING ON BUTTON
@@ -580,69 +591,9 @@ class HomeController: UIViewController {
         }))
         self.present(alert, animated: true, completion: nil)
     }
+    
 
-    
-}
-/*
-extension UIButton {
-    
-    func pulsate() {
-        let pulse = CASpringAnimation(keyPath: "transform.scale")
-        pulse.duration = 1
-        pulse.fromValue = 0.95
-        pulse.toValue = 1
-        pulse.autoreverses = true
-        pulse.repeatCount = 2
-        pulse.initialVelocity = 0.5
-        pulse.damping = 1.0
-        
-        layer.add(pulse, forKey: nil)
-    }
-    
-    func flash() {
-        let flash = CABasicAnimation(keyPath: "opacity")
-        flash.duration = 0.5
-        flash.fromValue = 1
-        flash.toValue = 0.1
-        flash.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-        flash.autoreverses = true
-        flash.repeatCount = 3
-        layer.add(flash, forKey: nil)
-    }
-    
-    func shake() {
-        let shake = CABasicAnimation(keyPath: "position")
-        shake.duration = 0.1
-        shake.repeatCount = 2
-        shake.autoreverses = true
-        
-        let fromPoint = CGPoint(x: center.x - 5, y: center.y)
-        let fromValue = NSValue(cgPoint: fromPoint)
-        
-        let toPoint = CGPoint(x: center.x + 5, y: center.y)
-        let toValue = NSValue(cgPoint: toPoint)
-        
-        shake.fromValue = fromValue
-        shake.toValue = toValue
-        
-        layer.add(shake, forKey: nil)
-        
-    }
-}
-*/
 
-/* NOTIFICATIONS */
-// add notification
-//if enableNotification == true{
-//    let content = UNMutableNotificationContent()
-//    content.title = "Il est temps de se mettre au sport !"
-//    content.subtitle = "Êtes-vous prêt ?"
-//    content.body = "Venez battre votre record personnel !"
-//    content.badge = 1
-//
-//    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 82800, repeats: true)
-//    let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
-//
-//    UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-//}
+}
+
 
