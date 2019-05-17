@@ -24,6 +24,9 @@ class EditProfileController: UIViewController, UIPickerViewDataSource,  UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // bar color status
+        UIApplication.shared.statusBarView?.backgroundColor = .gray
+
         setupTextfieldsManaging()
         
         //Picker View

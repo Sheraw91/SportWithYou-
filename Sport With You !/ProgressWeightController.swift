@@ -27,6 +27,9 @@ class ProgressWeightController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // bar color status
+        UIApplication.shared.statusBarView?.backgroundColor = .gray
+
         setupTextfieldsManaging()
         
         /*  Catch values for update graph */

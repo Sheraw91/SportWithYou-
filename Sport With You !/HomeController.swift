@@ -29,12 +29,17 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // bar color status
+        UIApplication.shared.statusBarView?.backgroundColor = .gray
+
         // clean badges
         UIApplication.shared.applicationIconBadgeNumber = 0
         
         // hide button
         resetButton.isHidden = true
         pauseButton.isHidden = true
+        startButton.isHidden = false
+
         
         let ref = Database.database().reference()
         let userID = Auth.auth().currentUser?.uid
@@ -72,6 +77,7 @@ class HomeController: UIViewController {
     public var time: Int=0
     var timer = Timer()
     var timerIsOn = false
+    var pause = false
     // gestion du temps
     var addHours = 0
     public var addMin = 0
@@ -104,10 +110,11 @@ class HomeController: UIViewController {
         // hide button
         resetButton.isHidden = true
         pauseButton.isHidden = true
+        startButton.isHidden = false
         // display button +/-
         plusbutton.isHidden = false
         lessButton.isHidden = false
-        //hide gif when ax stop
+        //hide gif when ex stop
         gifImae.isHidden = true
     }
     
@@ -164,6 +171,8 @@ class HomeController: UIViewController {
                 // hide button +/-
                 plusbutton.isHidden = true
                 lessButton.isHidden = true
+                startButton.isHidden = true
+
                 //hide gif when ax stop
                 gifImae.isHidden = false
                 // start timer
@@ -176,6 +185,15 @@ class HomeController: UIViewController {
     @IBAction func pauseTimer(_ sender: UIButton) {
         timer.invalidate()
         timerIsOn = false
+        
+        if pause == true{
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerDidEnded), userInfo: nil, repeats: true)
+            pause = false
+        } else {
+            timer.invalidate()
+            pause = true
+
+        }
     }
     
     var prog : [String] = []
@@ -279,10 +297,10 @@ class HomeController: UIViewController {
                     }
                 }
             }
-            if getMin == 10 { // ( 10min = 600s )
+            else if getMin == 10 { // ( 10min = 600s )
                 if time >= 580{
                     if display == 0{
-                        gifImae.loadGif(name: "exercises_c (10)")
+                        gifImae.loadGif(name: "ex1")
                         display += 1
                     } else {
                     }
@@ -595,5 +613,4 @@ class HomeController: UIViewController {
 
 
 }
-
 

@@ -19,6 +19,9 @@ class SharedController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // bar color status
+        UIApplication.shared.statusBarView?.backgroundColor = .gray
+
 
         // Do any additional setup after loading the view.
     }

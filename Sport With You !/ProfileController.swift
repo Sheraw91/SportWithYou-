@@ -15,6 +15,9 @@ class ProfileController: UIViewController {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        // bar color status
+        UIApplication.shared.statusBarView?.backgroundColor = .gray
+
         tabBarItem = UITabBarItem(title: "My profile", image: UIImage(named: "user"), tag: 4)
     }
     
@@ -44,26 +47,15 @@ class ProfileController: UIViewController {
                 let value = snapshot.value as? NSDictionary
                 
                 let username = value?["username"] as? String ?? "no username :("
-                let firstname = value?["firstname"] as? String ?? "no firstname :("
-                let lastname = value?["lastname"] as? String ?? "no lastname :("
-                let birthday = value?["birthday"] as? String ?? "no birthday :("
-                let country = value?["country"] as? String ?? "no country :("
                 let height = value?["height"] as? String ?? "no height :("
                 let weight = value?["weight"] as? String ?? "no weight :("
-                let gender = value?["gender"] as? String ?? "no gender :("
                 let level = value?["level"] as? String ?? "no level :("
-                let email = value?["email"] as? String ?? "no email :("
         
                 self.usernameLabel.text = username
-                self.firstnameLabel.text = firstname
-                self.lastnameLabel.text = lastname
-                self.birthdayLabel.text = birthday
-                self.countryLabel.text = country
                 self.heightLabel.text! = height
                 self.weightLabel.text! = weight
-                self.genderLabel.text! = gender
                 self.levelLabel.text! = level
-                self.emailLabel.text! = email
+
                 
   
                 
