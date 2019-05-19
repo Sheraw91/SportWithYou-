@@ -14,7 +14,7 @@ class ProgramController: UIViewController {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        tabBarItem = UITabBarItem(title: "Program", image: UIImage(named: "calendar"), tag: 3)
+        tabBarItem = UITabBarItem(title: "Programs", image: UIImage(named: "calendar"), tag: 3)
     }
     
     
