@@ -20,8 +20,10 @@ class ProgramController: UIViewController {
     
     @IBOutlet weak var beginnerImage: UIImageView!
     @IBOutlet weak var myProgramImage: UIImageView!
-    @IBOutlet weak var scaledImage: UIImageView!
-    @IBOutlet weak var advancedImage: UIImageView!
+
+    @IBOutlet weak var viewBeginner: UIView!
+    @IBOutlet weak var viewScaled: UIView!
+    @IBOutlet weak var viewAdvanced: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,32 +38,32 @@ class ProgramController: UIViewController {
         myProgramImage.layer.shadowRadius = 3.0
         myProgramImage.clipsToBounds = false
         
-        beginnerImage.layer.cornerRadius = 13
-        beginnerImage.layer.borderWidth = 2
-        beginnerImage.layer.borderColor = UIColor.black.cgColor
-        beginnerImage.layer.shadowColor = UIColor.gray.cgColor
-        beginnerImage.layer.shadowOffset = CGSize(width: 1, height: 2)
-        beginnerImage.layer.shadowOpacity = 1
-        beginnerImage.layer.shadowRadius = 3.0
-        beginnerImage.clipsToBounds = false
+        viewBeginner.layer.cornerRadius = 13
+        viewBeginner.layer.borderWidth = 2
+        viewBeginner.layer.borderColor = UIColor.black.cgColor
+        viewBeginner.layer.shadowColor = UIColor.gray.cgColor
+        viewBeginner.layer.shadowOffset = CGSize(width: 1, height: 2)
+        viewBeginner.layer.shadowOpacity = 1
+        viewBeginner.layer.shadowRadius = 3.0
+        viewBeginner.clipsToBounds = false
         
-        scaledImage.layer.cornerRadius = 13
-        scaledImage.layer.borderWidth = 2
-        scaledImage.layer.borderColor = UIColor.black.cgColor
-        scaledImage.layer.shadowColor = UIColor.gray.cgColor
-        scaledImage.layer.shadowOffset = CGSize(width: 1, height: 2)
-        scaledImage.layer.shadowOpacity = 1
-        scaledImage.layer.shadowRadius = 3.0
-        scaledImage.clipsToBounds = false
+        viewScaled.layer.cornerRadius = 13
+        viewScaled.layer.borderWidth = 2
+        viewScaled.layer.borderColor = UIColor.black.cgColor
+        viewScaled.layer.shadowColor = UIColor.gray.cgColor
+        viewScaled.layer.shadowOffset = CGSize(width: 1, height: 2)
+        viewScaled.layer.shadowOpacity = 1
+        viewScaled.layer.shadowRadius = 3.0
+        viewScaled.clipsToBounds = false
         
-        advancedImage.layer.cornerRadius = 13
-        advancedImage.layer.borderWidth = 2
-        advancedImage.layer.borderColor = UIColor.black.cgColor
-        advancedImage.layer.shadowColor = UIColor.gray.cgColor
-        advancedImage.layer.shadowOffset = CGSize(width: 1, height: 2)
-        advancedImage.layer.shadowOpacity = 1
-        advancedImage.layer.shadowRadius = 3.0
-        advancedImage.clipsToBounds = false
+        viewAdvanced.layer.cornerRadius = 13
+        viewAdvanced.layer.borderWidth = 2
+        viewAdvanced.layer.borderColor = UIColor.black.cgColor
+        viewAdvanced.layer.shadowColor = UIColor.gray.cgColor
+        viewAdvanced.layer.shadowOffset = CGSize(width: 1, height: 2)
+        viewAdvanced.layer.shadowOpacity = 1
+        viewAdvanced.layer.shadowRadius = 3.0
+        viewAdvanced.clipsToBounds = false
 
     }
     
