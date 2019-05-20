@@ -35,8 +35,32 @@ class ProfileController: UIViewController {
     
     @IBOutlet weak var profilePictureImageView: UIImageView!
     
+    @IBOutlet weak var successButton: UIButton!
+    @IBOutlet weak var progressButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // button config
+        successButton.layer.cornerRadius = 13
+        successButton.layer.borderWidth = 2
+        successButton.layer.borderColor = UIColor.black.cgColor
+        successButton.layer.shadowColor = UIColor.gray.cgColor
+        successButton.layer.shadowOffset = CGSize(width: 1, height: 2)
+        successButton.layer.shadowOpacity = 1
+        successButton.layer.shadowRadius = 3.0
+        successButton.clipsToBounds = false
+        
+        progressButton.layer.cornerRadius = 13
+        progressButton.layer.borderWidth = 2
+        progressButton.layer.borderColor = UIColor.black.cgColor
+        progressButton.layer.shadowColor = UIColor.gray.cgColor
+        progressButton.layer.shadowOffset = CGSize(width: 1, height: 2)
+        progressButton.layer.shadowOpacity = 1
+        progressButton.layer.shadowRadius = 3.0
+        progressButton.clipsToBounds = false
+        
+        
+        
         
         if let user = Auth.auth().currentUser {
             
