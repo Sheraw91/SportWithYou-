@@ -10,6 +10,7 @@ target 'Sport With You !' do
 	pod 'TextFieldEffects'
         pod 'Firebase/Storage','~>4.0'
 	pod 'Charts'
+	pod 'MBCircularProgressBar'
         
   # Pods for Sport With You !
 
