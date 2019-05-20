@@ -11,13 +11,12 @@ import UIKit
 class ActivityController: UIViewController {
     
     
-    @IBOutlet weak var loading: UIActivityIndicatorView!
+    
+    @IBOutlet weak var loading: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loading.isHidden = false
-        if loading.isHidden == false {
-            loading.startAnimating()
-        }
+        loading.loadGif(name: "loading")
+       
     }
 }
