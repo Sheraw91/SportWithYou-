@@ -21,6 +21,7 @@
 		3B6BA05C228DAEBF0022144F /* loading2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3B6BA05B228DAEBE0022144F /* loading2.gif */; };
 		3B6BA05E228DB0090022144F /* loading5_pause.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3B6BA05D228DB0090022144F /* loading5_pause.gif */; };
 		3B94566B228ABB9D002E4BEE /* configGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94566A228ABB9D002E4BEE /* configGif.swift */; };
+		3B98FA142292E5330094092E /* PopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B98FA132292E5330094092E /* PopupController.swift */; };
 		3BA4B6BF228965EA00FB0C5D /* ProgressWeightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA4B6BE228965EA00FB0C5D /* ProgressWeightController.swift */; };
 		3BF11745228E1EAA0054BEF8 /* ex10.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3BF11731228E1EA70054BEF8 /* ex10.gif */; };
 		3BF11746228E1EAA0054BEF8 /* ex11.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3BF11732228E1EA70054BEF8 /* ex11.gif */; };
@@ -71,6 +72,7 @@
 		3B6BA05B228DAEBE0022144F /* loading2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading2.gif; sourceTree = "<group>"; };
 		3B6BA05D228DB0090022144F /* loading5_pause.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading5_pause.gif; sourceTree = "<group>"; };
 		3B94566A228ABB9D002E4BEE /* configGif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = configGif.swift; sourceTree = "<group>"; };
+		3B98FA132292E5330094092E /* PopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupController.swift; sourceTree = "<group>"; };
 		3BA4B6BE228965EA00FB0C5D /* ProgressWeightController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressWeightController.swift; sourceTree = "<group>"; };
 		3BF11731228E1EA70054BEF8 /* ex10.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ex10.gif; sourceTree = "<group>"; };
 		3BF11732228E1EA70054BEF8 /* ex11.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ex11.gif; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				3BFB520F228451720041D872 /* SharedController.swift */,
 				3BA4B6BE228965EA00FB0C5D /* ProgressWeightController.swift */,
 				3BFB5215228460A20041D872 /* TabBarViewController.swift */,
+				3B98FA132292E5330094092E /* PopupController.swift */,
 				3B0108112281E243005E1CBF /* Main.storyboard */,
 				3B0108162281E243005E1CBF /* LaunchScreen.storyboard */,
 				3B6BA057228D98220022144F /* ActivityController.swift */,
@@ -332,6 +335,7 @@
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/MBCircularProgressBar/MBCircularProgressBar.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -341,6 +345,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCircularProgressBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -368,6 +373,7 @@
 				3B94566B228ABB9D002E4BEE /* configGif.swift in Sources */,
 				3B0108102281E243005E1CBF /* LoginController.swift in Sources */,
 				3B551B6E2281EB6800BEBA5B /* SigninController.swift in Sources */,
+				3B98FA142292E5330094092E /* PopupController.swift in Sources */,
 				3B01080E2281E243005E1CBF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
