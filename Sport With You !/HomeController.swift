@@ -12,9 +12,13 @@ import FirebaseDatabase
 import AVFoundation
 import UserNotifications
 import Foundation
+import MBCircularProgressBar
 
-class HomeController: UIViewController {
-
+class HomeController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    //var text picker
+    var exercice = ["Legs","Abs","Arms","My program"]
+    var picker = UIPickerView()
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -22,13 +26,25 @@ class HomeController: UIViewController {
     }
     
     @IBOutlet weak var gifImae: UIImageView!
-    
-    // add notification
-    
+    @IBOutlet weak var circleTimeView: MBCircularProgressBarView!
 
+    @IBOutlet weak var actu1: UILabel!
+    @IBOutlet weak var actu2: UILabel!
+    
+    @IBOutlet weak var typeExerciceLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // circle
+        circleTimeView.layer.cornerRadius = 120
+        circleTimeView.value = 0
+        circleTimeView.isHidden = true
+        circleTimeView.value = 0
+
+        
+        exLabel.isHidden = true
+        
         // bar color status
         UIApplication.shared.statusBarView?.backgroundColor = .gray
 
@@ -39,6 +55,8 @@ class HomeController: UIViewController {
         resetButton.isHidden = true
         pauseButton.isHidden = true
         startButton.isHidden = false
+        actu1.isHidden = false
+        actu2.isHidden = false
 
         
         let ref = Database.database().reference()
@@ -55,6 +73,18 @@ class HomeController: UIViewController {
         // sleep mode disable
         UIApplication.shared.isIdleTimerDisabled = true
 
+        //type exercice
+        typeExerciceLabel.isHidden = true
+        
+        //text picker
+        picker.delegate = self
+        picker.dataSource = self
+        
+        typeExerciceTextField.inputView = picker
+        
+        //setup text field
+        typeExerciceTextField.layer.borderWidth = 1
+        typeExerciceTextField.layer.borderColor = UIColor.orange.cgColor
     }
     
     
@@ -92,6 +122,10 @@ class HomeController: UIViewController {
     //action buttons
     @IBOutlet weak var plusbutton: UIButton!
     @IBOutlet weak var lessButton: UIButton!
+    //type exercice
+    @IBOutlet weak var typeExerciceTextField: UITextField!
+    @IBOutlet weak var exLabel: UILabel!
+    
     
 
     
@@ -116,12 +150,27 @@ class HomeController: UIViewController {
         lessButton.isHidden = false
         //hide gif when ex stop
         gifImae.isHidden = true
+        // hide circle
+        circleTimeView.isHidden = true
+        // Type ex and label text ex
+        typeExerciceLabel.isHidden = true
+        typeExerciceTextField.isHidden = false
+        actu1.isHidden = false
+        actu2.isHidden = false
+        exLabel.isHidden = true
     }
     
     /* START TIMER */
     public var notifs = true
 
     @IBAction func startTimer(_ sender: UIButton) {
+        exLabel.isHidden = false
+        actu1.isHidden = true
+        actu2.isHidden = true
+        resetcirclePause = true
+        resetcircleEx = true
+        circleTimeView.value = 0
+        
         let content = UNMutableNotificationContent()
         content.title = "Vous êtes encore la ?"
         content.subtitle = "Il est temps de se remettre au sport !"
@@ -173,7 +222,12 @@ class HomeController: UIViewController {
                 lessButton.isHidden = true
                 startButton.isHidden = true
 
-                //hide gif when ax stop
+                // type ex
+                typeExerciceLabel.isHidden = false
+                typeExerciceTextField.isHidden = true
+                typeExerciceLabel.text = typeExerciceTextField.text
+                
+                //hide gif when ex stop
                 gifImae.isHidden = false
                 // start timer
                 timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerDidEnded), userInfo: nil, repeats: true)
@@ -200,103 +254,330 @@ class HomeController: UIViewController {
     public var z = true
     public var i = 0
     public var display = 0
+    var resetcirclePause = true
+    var resetcircleEx = true
+
     
     @objc private func timerDidEnded(){
         updateUI()
         /* BIDOUILLAGE ACTIVÉ */
+        circleTimeView.isHidden = false
        
         if (self.levelLabel.text!) == "Beginner" {
             if getMin == 5 { // ( 5min = 300s )
                 if time >= 280{
+                    exLabel.text = "Down Up"
+                    circleTimeView.maxValue = 20
                     if display == 0{
-                        gifImae.loadGif(name: "ex1")
+                        gifImae.loadGif(name: "ex18")
                         display += 1
+                        UIView.animate(withDuration: 1.0) {
+                            self.circleTimeView.value += 1
+                        }
                     } else {
+                        UIView.animate(withDuration: 1.0) {
+                            self.circleTimeView.value += 1
+                        }
                     }
                 } else if time >= 270 {
-                    gifImae.loadGif(name: "pause")
-                    display = 0
-                } else if time >= 250 {
-                    if display == 0{
-                        gifImae.loadGif(name: "ex2")
-                        display += 1
-                    } else {
+                    exLabel.text = ""
+                    circleTimeView.maxValue = 10
+                    if resetcirclePause == true {
+                        circleTimeView.value = 10
+                        resetcirclePause = false
                     }
-                } else if time >= 240 {
                     gifImae.loadGif(name: "pause")
                     display = 0
-                } else if time >= 220 {
-                    if display == 0{
-                        gifImae.loadGif(name: "ex3")
-                        display += 1
-                    } else {
-                    }
-                } else if time >= 210 {
-                    gifImae.loadGif(name: "pause")
-                    display = 0
-                } else if time >= 190 {
-                    if display == 0{
-                        gifImae.loadGif(name: "ex4")
-                        display += 1
-                    } else {
-                    }
-                } else if time >= 180 {
-                    gifImae.loadGif(name: "pause")
-                    display = 0
-                } else if time >= 160 {
-                    if display == 0{
-                        gifImae.loadGif(name: "ex1")
-                        display += 1
-                    } else {
-                    }
-                } else if time >= 150 {
-                    gifImae.loadGif(name: "pause")
-                    display = 0
-                } else if time >= 130 {
-                    if display == 0{
-                        gifImae.loadGif(name: "ex2")
-                        display += 1
-                    } else {
-                    }
-                } else if time >= 120 {
-                    gifImae.loadGif(name: "pause")
-                    display = 0
-                } else if time >= 100 {
-                    if display == 0{
-                        gifImae.loadGif(name: "ex3")
-                        display += 1
-                    } else {
-                    }
-                } else if time >= 90 {
-                    gifImae.loadGif(name: "pause")
-                    display = 0
-                } else if time >= 70 {
-                    if display == 0{
-                        gifImae.loadGif(name: "ex4")
-                        display += 1
-                    } else {
-                    }
-                } else if time >= 60 {
-                    gifImae.loadGif(name: "pause")
-                    display = 0
-                } else if time >= 40 {
-                    if display == 0{
-                        gifImae.loadGif(name: "ex5")
-                        display += 1
-                    } else {
-                    }
-                } else if time >= 30 {
-                    gifImae.loadGif(name: "pause")
-                    display = 0
-                } else if time >= 10 {
-                    //timeOut()
-                    if display == 0{
-                        gifImae.loadGif(name: "ex1")
-                        display += 1
-                    } else {
+                    UIView.animate(withDuration: 1.0) {
+                        self.circleTimeView.value -= 1
                     }
                 }
+                    
+                else if time >= 250 {
+                    exLabel.text = "Lunges"
+                    resetcirclePause = true
+                    if resetcircleEx == true {
+                        circleTimeView.value = 0
+                        resetcircleEx = false
+                    }
+                    circleTimeView.maxValue = 20
+                    if display == 0{
+                        gifImae.loadGif(name: "ex1")
+                        display += 1
+                        UIView.animate(withDuration: 1.0) {
+                            self.circleTimeView.value += 1
+                        }
+                    } else {
+                        UIView.animate(withDuration: 1.0) {
+                            self.circleTimeView.value += 1
+                        }
+                    }
+                } else if time >= 240 {
+                    exLabel.text = ""
+                    circleTimeView.maxValue = 10
+                    if resetcirclePause == true {
+                        circleTimeView.value = 10
+                        resetcirclePause = false
+                    }
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                    UIView.animate(withDuration: 1.0) {
+                        self.circleTimeView.value -= 1
+                    }
+                }
+                
+                    
+                else if time >= 220 {
+                    exLabel.text = "Jumping Jack"
+                    resetcirclePause = true
+                    if resetcircleEx == true {
+                        circleTimeView.value = 0
+                        resetcircleEx = false
+                    }
+                    circleTimeView.maxValue = 20
+                    if display == 0{
+                        gifImae.loadGif(name: "ex7")
+                        display += 1
+                        UIView.animate(withDuration: 1.0) {
+                            self.circleTimeView.value += 1
+                        }
+                    } else {
+                        UIView.animate(withDuration: 1.0) {
+                            self.circleTimeView.value += 1
+                        }
+                    }
+                } else if time >= 210 {
+                    exLabel.text = ""
+                    circleTimeView.maxValue = 10
+                    if resetcirclePause == true {
+                        circleTimeView.value = 10
+                        resetcirclePause = false
+                    }
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                    UIView.animate(withDuration: 1.0) {
+                        self.circleTimeView.value -= 1
+                    }
+                }
+                
+                    
+                else if time >= 190 {
+                    exLabel.text = "One leg squat"
+                    resetcirclePause = true
+                    if resetcircleEx == true {
+                        circleTimeView.value = 0
+                        resetcircleEx = false
+                    }
+                    circleTimeView.maxValue = 20
+                    if display == 0{
+                        gifImae.loadGif(name: "ex3")
+                        display += 1
+                        UIView.animate(withDuration: 1.0) {
+                            self.circleTimeView.value += 1
+                        }
+                    } else {
+                        UIView.animate(withDuration: 1.0) {
+                            self.circleTimeView.value += 1
+                        }
+                    }
+                } else if time >= 180 {
+                    exLabel.text = ""
+                    circleTimeView.maxValue = 10
+                    if resetcirclePause == true {
+                        circleTimeView.value = 10
+                        resetcirclePause = false
+                    }
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                    UIView.animate(withDuration: 1.0) {
+                        self.circleTimeView.value -= 1
+                    }
+                }
+                
+                else if time >= 160 {
+                    exLabel.text = "Lunges"
+                    resetcirclePause = true
+                    if resetcircleEx == true {
+                        circleTimeView.value = 0
+                        resetcircleEx = false
+                    }
+                    circleTimeView.maxValue = 20
+                    if display == 0{
+                        gifImae.loadGif(name: "ex1")
+                        display += 1
+                        UIView.animate(withDuration: 1.0) {
+                            self.circleTimeView.value += 1
+                        }
+                    } else {
+                        UIView.animate(withDuration: 1.0) {
+                            self.circleTimeView.value += 1
+                        }
+                    }
+                } else if time >= 150 {
+                    exLabel.text = ""
+                    circleTimeView.maxValue = 10
+                    if resetcirclePause == true {
+                        circleTimeView.value = 10
+                        resetcirclePause = false
+                    }
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                    UIView.animate(withDuration: 1.0) {
+                        self.circleTimeView.value -= 1
+                    }
+                }
+                else if time >= 130 {
+                    exLabel.text = "Jumping Jack"
+                    resetcirclePause = true
+                    if resetcircleEx == true {
+                        circleTimeView.value = 0
+                        resetcircleEx = false
+                    }
+                    circleTimeView.maxValue = 20
+                    if display == 0{
+                        gifImae.loadGif(name: "ex7")
+                        display += 1
+                        UIView.animate(withDuration: 1.0) {
+                            self.circleTimeView.value += 1
+                        }
+                    } else {
+                        UIView.animate(withDuration: 1.0) {
+                            self.circleTimeView.value += 1
+                        }
+                    }
+                } else if time >= 120 {
+                    exLabel.text = ""
+                    circleTimeView.maxValue = 10
+                    if resetcirclePause == true {
+                        circleTimeView.value = 10
+                        resetcirclePause = false
+                    }
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                    UIView.animate(withDuration: 1.0) {
+                        self.circleTimeView.value -= 1
+                    }
+                }
+                    
+                else if time >= 100 {
+                    exLabel.text = "Down Up"
+                    resetcirclePause = true
+                    if resetcircleEx == true {
+                        circleTimeView.value = 0
+                        resetcircleEx = false
+                    }
+                    circleTimeView.maxValue = 20
+                    if display == 0{
+                        gifImae.loadGif(name: "ex18")
+                        display += 1
+                        UIView.animate(withDuration: 1.0) {
+                            self.circleTimeView.value += 1
+                        }
+                    } else {
+                        UIView.animate(withDuration: 1.0) {
+                            self.circleTimeView.value += 1
+                        }
+                    }
+                } else if time >= 90 {
+                    exLabel.text = ""
+                    circleTimeView.maxValue = 10
+                    if resetcirclePause == true {
+                        circleTimeView.value = 10
+                        resetcirclePause = false
+                    }
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                    UIView.animate(withDuration: 1.0) {
+                        self.circleTimeView.value -= 1
+                    }
+                }
+                else if time >= 70 {
+                    exLabel.text = "One Leg Squat"
+                    resetcirclePause = true
+                    if resetcircleEx == true {
+                        circleTimeView.value = 0
+                        resetcircleEx = false
+                    }
+                    circleTimeView.maxValue = 20
+                    if display == 0{
+                        gifImae.loadGif(name: "ex3")
+                        display += 1
+                        UIView.animate(withDuration: 1.0) {
+                            self.circleTimeView.value += 1
+                        }
+                    } else {
+                        UIView.animate(withDuration: 1.0) {
+                            self.circleTimeView.value += 1
+                        }
+                    }
+                } else if time >= 60 {
+                    exLabel.text = ""
+                    circleTimeView.maxValue = 10
+                    if resetcirclePause == true {
+                        circleTimeView.value = 10
+                        resetcirclePause = false
+                    }
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                    UIView.animate(withDuration: 1.0) {
+                        self.circleTimeView.value -= 1
+                    }
+                }
+                else if time >= 40 {
+                    exLabel.text = "Lunges"
+                    resetcirclePause = true
+                    if resetcircleEx == true {
+                        circleTimeView.value = 0
+                        resetcircleEx = false
+                    }
+                    circleTimeView.maxValue = 20
+                    if display == 0{
+                        gifImae.loadGif(name: "ex1")
+                        display += 1
+                        UIView.animate(withDuration: 1.0) {
+                            self.circleTimeView.value += 1
+                        }
+                    } else {
+                        UIView.animate(withDuration: 1.0) {
+                            self.circleTimeView.value += 1
+                        }
+                    }
+                } else if time >= 30 {
+                    exLabel.text = ""
+                    circleTimeView.maxValue = 10
+                    if resetcirclePause == true {
+                        circleTimeView.value = 10
+                        resetcirclePause = false
+                    }
+                    gifImae.loadGif(name: "pause")
+                    display = 0
+                    UIView.animate(withDuration: 1.0) {
+                        self.circleTimeView.value -= 1
+                    }
+                }
+                else if time >= 20 {
+                    exLabel.text = "Jumping"
+                    resetcirclePause = true
+                    if resetcircleEx == true {
+                        circleTimeView.value = 0
+                        resetcircleEx = false
+                    }
+                    circleTimeView.maxValue = 20
+                    if display == 0{
+                        gifImae.loadGif(name: "ex7")
+                        display += 1
+                        UIView.animate(withDuration: 1.0) {
+                            self.circleTimeView.value += 1
+                        }
+                    } else {
+                        UIView.animate(withDuration: 1.0) {
+                            self.circleTimeView.value += 1
+                        }
+                    }
+                }
+                
             }
+
             else if getMin == 10 { // ( 10min = 600s )
                 if time >= 580{
                     if display == 0{
@@ -491,6 +772,10 @@ class HomeController: UIViewController {
  
         if time == 0 {
             timer.invalidate()
+            // hide and show element
+            typeExerciceLabel.isHidden = true
+            typeExerciceTextField.isHidden = false
+            circleTimeView.isHidden = true
             print("Good job ! : time's up.")
             let alertController = UIAlertController(title : "Good job !", message: "time's up.", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "Ok", style: .default))
@@ -499,11 +784,16 @@ class HomeController: UIViewController {
             // hide button
             resetButton.isHidden = true
             pauseButton.isHidden = true
+            startButton.isHidden = false
             // display button +/-
             plusbutton.isHidden = false
             lessButton.isHidden = false
             //hide gif when ax stop
             gifImae.isHidden = true
+            actu1.isHidden = false
+            actu2.isHidden = false
+            exLabel.isHidden = true
+
         }
     }
         
@@ -610,7 +900,20 @@ class HomeController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return exercice.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return exercice[row]
+    }
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        typeExerciceTextField.text = exercice[row]
+        self.view.endEditing(false)
+    }
 
 }
 
