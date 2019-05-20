@@ -793,6 +793,8 @@ class HomeController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             actu1.isHidden = false
             actu2.isHidden = false
             exLabel.isHidden = true
+            time = 0
+            updateUI()
 
         }
     }
