@@ -26,6 +26,10 @@
 		3B94566B228ABB9D002E4BEE /* configGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94566A228ABB9D002E4BEE /* configGif.swift */; };
 		3B98FA142292E5330094092E /* PopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B98FA132292E5330094092E /* PopupController.swift */; };
 		3BA4B6BF228965EA00FB0C5D /* ProgressWeightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA4B6BE228965EA00FB0C5D /* ProgressWeightController.swift */; };
+		3BB4B0052294B1E400903888 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4B0042294B1E400903888 /* loading.gif */; };
+		3BB4B0082294B2E200903888 /* loading3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4B0062294B2E200903888 /* loading3.gif */; };
+		3BB4B0092294B2E200903888 /* loading5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4B0072294B2E200903888 /* loading5.gif */; };
+		3BB4B00B2294B31100903888 /* Sb1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4B00A2294B31100903888 /* Sb1ViewController.swift */; };
 		3BF11745228E1EAA0054BEF8 /* ex10.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3BF11731228E1EA70054BEF8 /* ex10.gif */; };
 		3BF11746228E1EAA0054BEF8 /* ex11.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3BF11732228E1EA70054BEF8 /* ex11.gif */; };
 		3BF11747228E1EAA0054BEF8 /* ex19.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3BF11733228E1EA70054BEF8 /* ex19.gif */; };
@@ -80,6 +84,10 @@
 		3B94566A228ABB9D002E4BEE /* configGif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = configGif.swift; sourceTree = "<group>"; };
 		3B98FA132292E5330094092E /* PopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupController.swift; sourceTree = "<group>"; };
 		3BA4B6BE228965EA00FB0C5D /* ProgressWeightController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressWeightController.swift; sourceTree = "<group>"; };
+		3BB4B0042294B1E400903888 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
+		3BB4B0062294B2E200903888 /* loading3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading3.gif; sourceTree = "<group>"; };
+		3BB4B0072294B2E200903888 /* loading5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading5.gif; sourceTree = "<group>"; };
+		3BB4B00A2294B31100903888 /* Sb1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sb1ViewController.swift; sourceTree = "<group>"; };
 		3BF11731228E1EA70054BEF8 /* ex10.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ex10.gif; sourceTree = "<group>"; };
 		3BF11732228E1EA70054BEF8 /* ex11.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ex11.gif; sourceTree = "<group>"; };
 		3BF11733228E1EA70054BEF8 /* ex19.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ex19.gif; sourceTree = "<group>"; };
@@ -174,17 +182,21 @@
 				3BFB5215228460A20041D872 /* TabBarViewController.swift */,
 				3B98FA132292E5330094092E /* PopupController.swift */,
 				3B5EFF1022942635008EEBA8 /* AddProgramController.swift */,
+				3BB4B00A2294B31100903888 /* Sb1ViewController.swift */,
 				3B5EFF0A2293DBA7008EEBA8 /* PageViewController.swift */,
 				3B0108112281E243005E1CBF /* Main.storyboard */,
 				3B0108162281E243005E1CBF /* LaunchScreen.storyboard */,
 				3B6BA057228D98220022144F /* ActivityController.swift */,
 				3B0108142281E243005E1CBF /* Assets.xcassets */,
+				3BB4B0042294B1E400903888 /* loading.gif */,
 				3B0108192281E243005E1CBF /* Info.plist */,
 				3B01081F2281E2A6005E1CBF /* GoogleService-Info.plist */,
 				3B50AA56228C7B8700F480FF /* exercises_c (10).gif */,
 				3B6BA059228D9C670022144F /* timer.mp3 */,
 				3B5EFF1622942E4F008EEBA8 /* pause.gif */,
 				3B6BA05B228DAEBE0022144F /* loading2.gif */,
+				3BB4B0062294B2E200903888 /* loading3.gif */,
+				3BB4B0072294B2E200903888 /* loading5.gif */,
 			);
 			path = "Sport With You !";
 			sourceTree = "<group>";
@@ -294,10 +306,13 @@
 				3BF11753228E1EAA0054BEF8 /* ex1.gif in Resources */,
 				3BF11751228E1EAA0054BEF8 /* ex3.gif in Resources */,
 				3BF11754228E1EAA0054BEF8 /* ex5.gif in Resources */,
+				3BB4B0082294B2E200903888 /* loading3.gif in Resources */,
 				3BF11750228E1EAA0054BEF8 /* ex7.gif in Resources */,
+				3BB4B0092294B2E200903888 /* loading5.gif in Resources */,
 				3BF11752228E1EAA0054BEF8 /* ex16.gif in Resources */,
 				3BF11758228E1EAA0054BEF8 /* ex12.gif in Resources */,
 				3B0108152281E243005E1CBF /* Assets.xcassets in Resources */,
+				3BB4B0052294B1E400903888 /* loading.gif in Resources */,
 				3BF11756228E1EAA0054BEF8 /* ex13.gif in Resources */,
 				3BF1174E228E1EAA0054BEF8 /* ex4.gif in Resources */,
 				3B5EFF1722942E4F008EEBA8 /* pause.gif in Resources */,
@@ -385,6 +400,7 @@
 				3B94566B228ABB9D002E4BEE /* configGif.swift in Sources */,
 				3B0108102281E243005E1CBF /* LoginController.swift in Sources */,
 				3B551B6E2281EB6800BEBA5B /* SigninController.swift in Sources */,
+				3BB4B00B2294B31100903888 /* Sb1ViewController.swift in Sources */,
 				3B98FA142292E5330094092E /* PopupController.swift in Sources */,
 				3B01080E2281E243005E1CBF /* AppDelegate.swift in Sources */,
 			);
