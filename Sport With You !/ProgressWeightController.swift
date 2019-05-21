@@ -62,10 +62,12 @@ class ProgressWeightController: UIViewController {
         numbers.append(input!) // Add data to array
         updateGraph()
         
-        // Add to database
+        // Add to database abd update last field weight
         let refe = Database.database().reference()
         let userID = Auth.auth().currentUser?.uid
         refe.child("users").child(userID!).updateChildValues(["weight-progress": numbers])
+        refe.child("users").child(userID!).updateChildValues(["weight": currentWeightTextField.text!])
+
     }
     
     
