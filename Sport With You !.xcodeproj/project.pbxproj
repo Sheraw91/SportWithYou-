@@ -16,6 +16,7 @@
 		3B50AA57228C7B8700F480FF /* exercises_c (10).gif in Resources */ = {isa = PBXBuildFile; fileRef = 3B50AA56228C7B8700F480FF /* exercises_c (10).gif */; };
 		3B50AA59228C7D3A00F480FF /* pause.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3B50AA58228C7D3A00F480FF /* pause.gif */; };
 		3B551B6E2281EB6800BEBA5B /* SigninController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B551B6D2281EB6800BEBA5B /* SigninController.swift */; };
+		3B5EFF0B2293DBA7008EEBA8 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5EFF0A2293DBA7008EEBA8 /* PageViewController.swift */; };
 		3B6BA058228D98220022144F /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6BA057228D98220022144F /* ActivityController.swift */; };
 		3B6BA05A228D9C670022144F /* timer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3B6BA059228D9C670022144F /* timer.mp3 */; };
 		3B6BA05C228DAEBF0022144F /* loading2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3B6BA05B228DAEBE0022144F /* loading2.gif */; };
@@ -66,6 +67,7 @@
 		3B50AA56228C7B8700F480FF /* exercises_c (10).gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "exercises_c (10).gif"; sourceTree = "<group>"; };
 		3B50AA58228C7D3A00F480FF /* pause.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pause.gif; sourceTree = "<group>"; };
 		3B551B6D2281EB6800BEBA5B /* SigninController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninController.swift; sourceTree = "<group>"; };
+		3B5EFF0A2293DBA7008EEBA8 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		3B6BA057228D98220022144F /* ActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityController.swift; sourceTree = "<group>"; };
 		3B6BA059228D9C670022144F /* timer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = timer.mp3; path = ../../assets/sound/timer.mp3; sourceTree = "<group>"; };
 		3B6BA05B228DAEBE0022144F /* loading2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading2.gif; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				3BA4B6BE228965EA00FB0C5D /* ProgressWeightController.swift */,
 				3BFB5215228460A20041D872 /* TabBarViewController.swift */,
 				3B98FA132292E5330094092E /* PopupController.swift */,
+				3B5EFF0A2293DBA7008EEBA8 /* PageViewController.swift */,
 				3B0108112281E243005E1CBF /* Main.storyboard */,
 				3B0108162281E243005E1CBF /* LaunchScreen.storyboard */,
 				3B6BA057228D98220022144F /* ActivityController.swift */,
@@ -359,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BA4B6BF228965EA00FB0C5D /* ProgressWeightController.swift in Sources */,
+				3B5EFF0B2293DBA7008EEBA8 /* PageViewController.swift in Sources */,
 				3BFB5216228460A20041D872 /* TabBarViewController.swift in Sources */,
 				3BFB5210228451720041D872 /* SharedController.swift in Sources */,
 				3BFB52182284D53E0041D872 /* EditProfileController.swift in Sources */,
