@@ -23,15 +23,6 @@ class LoginController: UIViewController {
         setupButtons()
         setupTextfieldsManaging()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        if let alreadySignedIn = Auth.auth().currentUser{
-            print(" ✅✅ DEFAULT LOGIN ✅✅")
-            self.performSegue(withIdentifier: "goToHome1", sender: self)
-        } else {
-            
-        }
-    }
 
     private func setupButtons() {
         loginButton.layer.cornerRadius = 10
@@ -66,7 +57,7 @@ class LoginController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
             } else {
                 print(" ✅✅ LOGIN SUCCESS ✅✅")
-                self.performSegue(withIdentifier: "goToHome1", sender: self)
+                self.performSegue(withIdentifier: "goToHome3", sender: self)
             }
         }
     }

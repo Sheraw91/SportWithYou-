@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kku-sR-quL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,15 +13,19 @@
         <!--Page View Controller-->
         <scene sceneID="fs2-Fz-8Al">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Kku-sR-quL" customClass="PageViewController" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Kku-sR-quL" customClass="PageViewController" customModule="Sport_With_You__" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="t91-td-vBp" kind="show" identifier="goToHome1" id="Lpo-em-Gh6"/>
+                    </connections>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CY7-Kl-Wfv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22" y="-1754"/>
+            <point key="canvasLocation" x="-1393" y="-1594"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2wc-QB-2qY">
             <objects>
-                <viewController storyboardIdentifier="sbOrange" id="ebA-Mr-cVa" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="sb1" id="ebA-Mr-cVa" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="baO-Fy-ofP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,12 +35,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jdv-OI-weC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-929" y="-922"/>
+            <point key="canvasLocation" x="-394" y="-1594"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="4gO-nE-Vnx">
             <objects>
-                <viewController storyboardIdentifier="sbGrey" id="2Dv-IZ-lca" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="sb2" id="2Dv-IZ-lca" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8cm-8L-o8D">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,27 +50,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ECk-gt-AUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="49" y="-922"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="v5J-1A-JXG">
-            <objects>
-                <viewController storyboardIdentifier="sbBlue" id="Tri-kY-FsN" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bYq-JB-fZw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.30061930419999999" green="0.54037237169999996" blue="0.87846755980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <viewLayoutGuide key="safeArea" id="KCc-4w-A6u"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yfa-KE-POL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="980" y="-922"/>
+            <point key="canvasLocation" x="-394" y="-871"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginController" customModule="Sport_With_You__" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="sb3" id="BYZ-38-t0r" customClass="LoginController" customModule="Sport_With_You__" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -206,7 +195,7 @@
                         <outlet property="loginButton" destination="k3B-gq-8bC" id="vl9-Ef-KDC"/>
                         <outlet property="passwordTextField" destination="9Wu-Eu-nAA" id="W5z-mh-ddl"/>
                         <outlet property="registerButton" destination="WkI-U7-WZp" id="5eY-Rb-TyW"/>
-                        <segue destination="t91-td-vBp" kind="show" identifier="goToHome1" id="7dX-t2-Whi"/>
+                        <segue destination="t91-td-vBp" kind="show" identifier="goToHome3" id="ZZV-CB-AA1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -595,7 +584,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="returnToSignupScreen:" destination="Zs3-2j-Bn7" eventType="touchUpInside" id="Etb-0h-dEb"/>
-                                                    <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="j3I-FA-44x"/>
+                                                    <segue destination="Kku-sR-quL" kind="show" id="5hj-T3-h43"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -1504,7 +1493,7 @@
         <image name="white" width="549" height="549"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fyo-4D-Xib"/>
-        <segue reference="j3I-FA-44x"/>
+        <segue reference="Fez-Gk-aRn"/>
+        <segue reference="ZZV-CB-AA1"/>
     </inferredMetricsTieBreakers>
 </document>
