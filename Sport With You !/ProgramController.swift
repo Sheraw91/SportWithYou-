@@ -7,7 +7,9 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
+import FirebaseDatabase
+import FirebaseStorage
 
 
 class ProgramController: UIViewController {
@@ -66,6 +68,9 @@ class ProgramController: UIViewController {
         viewAdvanced.clipsToBounds = false
 
     }
+    
+    
+
     
     /*
     @IBOutlet weak var bgView: UIView!
