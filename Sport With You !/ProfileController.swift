@@ -37,27 +37,13 @@ class ProfileController: UIViewController {
     
     @IBOutlet weak var successButton: UIButton!
     @IBOutlet weak var progressButton: UIButton!
+    @IBOutlet weak var viewCenter: UIView!
+    @IBOutlet weak var viewCenter2: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // button config
-        successButton.layer.cornerRadius = 13
-        successButton.layer.borderWidth = 2
-        successButton.layer.borderColor = UIColor.black.cgColor
-        successButton.layer.shadowColor = UIColor.gray.cgColor
-        successButton.layer.shadowOffset = CGSize(width: 1, height: 2)
-        successButton.layer.shadowOpacity = 1
-        successButton.layer.shadowRadius = 3.0
-        successButton.clipsToBounds = false
-        
-        progressButton.layer.cornerRadius = 13
-        progressButton.layer.borderWidth = 2
-        progressButton.layer.borderColor = UIColor.black.cgColor
-        progressButton.layer.shadowColor = UIColor.gray.cgColor
-        progressButton.layer.shadowOffset = CGSize(width: 1, height: 2)
-        progressButton.layer.shadowOpacity = 1
-        progressButton.layer.shadowRadius = 3.0
-        progressButton.clipsToBounds = false
+
+       setupButtons()
         
         
         
@@ -123,6 +109,43 @@ class ProfileController: UIViewController {
     @IBAction func goEditProfile(_ sender: UIButton) {
         self.performSegue(withIdentifier: "editingProfile", sender: self)
     }
- 
+    private func setupButtons() {
+        // Create a gradient layer for register
+        let gradient = CAGradientLayer()
+        // gradient colors in order which they will visually appear
+        gradient.colors = [UIColor.orange.cgColor, UIColor.orange.cgColor]
+        // Gradient from left to right
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.7)
+        gradient.endPoint = CGPoint(x: 1.0, y: 0.7)
+        // set the gradient layer to the same size as the view
+        gradient.frame = viewCenter.bounds
+        // add the gradient layer to the views layer for rendering
+        viewCenter.layer.insertSublayer(gradient, at: 0)
+        // Tha magic! Set the button as the views mask
+        viewCenter.mask = successButton
+        //Set corner Radius and border Width of button
+        successButton.layer.cornerRadius =  viewCenter.frame.size.height / 2
+        successButton.layer.borderWidth = 5.0
+        
+        // Create a gradient layer for login button
+        let gradient2 = CAGradientLayer()
+        // gradient colors in order which they will visually appear
+        gradient2.colors = [UIColor.orange.cgColor, UIColor.orange.cgColor]
+        // Gradient from left to right
+        gradient2.startPoint = CGPoint(x: 0.0, y: 0.3)
+        gradient2.endPoint = CGPoint(x: 1.0, y: 0.3)
+        // set the gradient layer to the same size as the view
+        gradient2.frame = viewCenter2.bounds
+        // add the gradient layer to the views layer for rendering
+        viewCenter2.layer.insertSublayer(gradient2, at: 0)
+        // Tha magic! Set the button as the views mask
+        viewCenter2.mask = progressButton
+        //Set corner Radius and border Width of button
+        progressButton.layer.cornerRadius =  viewCenter2.frame.size.height / 2
+        progressButton.layer.borderWidth = 5.0
+        
+        
+        
+    }
     
 }
