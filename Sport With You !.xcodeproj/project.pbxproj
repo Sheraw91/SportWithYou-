@@ -28,6 +28,7 @@
 		3BB4B0092294B2E200903888 /* loading5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4B0072294B2E200903888 /* loading5.gif */; };
 		3BB4B00B2294B31100903888 /* Sb1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4B00A2294B31100903888 /* Sb1ViewController.swift */; };
 		3BB4B00D2294C9B700903888 /* AddProgrammController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4B00C2294C9B700903888 /* AddProgrammController.swift */; };
+		3BB4B00F229542C200903888 /* Sb2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4B00E229542C200903888 /* Sb2Controller.swift */; };
 		3BF11745228E1EAA0054BEF8 /* ex10.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3BF11731228E1EA70054BEF8 /* ex10.gif */; };
 		3BF11746228E1EAA0054BEF8 /* ex11.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3BF11732228E1EA70054BEF8 /* ex11.gif */; };
 		3BF11747228E1EAA0054BEF8 /* ex19.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3BF11733228E1EA70054BEF8 /* ex19.gif */; };
@@ -84,6 +85,7 @@
 		3BB4B0072294B2E200903888 /* loading5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading5.gif; sourceTree = "<group>"; };
 		3BB4B00A2294B31100903888 /* Sb1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sb1ViewController.swift; sourceTree = "<group>"; };
 		3BB4B00C2294C9B700903888 /* AddProgrammController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProgrammController.swift; sourceTree = "<group>"; };
+		3BB4B00E229542C200903888 /* Sb2Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sb2Controller.swift; sourceTree = "<group>"; };
 		3BF11731228E1EA70054BEF8 /* ex10.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ex10.gif; sourceTree = "<group>"; };
 		3BF11732228E1EA70054BEF8 /* ex11.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ex11.gif; sourceTree = "<group>"; };
 		3BF11733228E1EA70054BEF8 /* ex19.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ex19.gif; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				3BFB5215228460A20041D872 /* TabBarViewController.swift */,
 				3B98FA132292E5330094092E /* PopupController.swift */,
 				3BB4B00A2294B31100903888 /* Sb1ViewController.swift */,
+				3BB4B00E229542C200903888 /* Sb2Controller.swift */,
 				3B5EFF0A2293DBA7008EEBA8 /* PageViewController.swift */,
 				3B0108112281E243005E1CBF /* Main.storyboard */,
 				3B0108162281E243005E1CBF /* LaunchScreen.storyboard */,
@@ -381,6 +384,7 @@
 			files = (
 				3BA4B6BF228965EA00FB0C5D /* ProgressWeightController.swift in Sources */,
 				3B5EFF0B2293DBA7008EEBA8 /* PageViewController.swift in Sources */,
+				3BB4B00F229542C200903888 /* Sb2Controller.swift in Sources */,
 				3BFB5216228460A20041D872 /* TabBarViewController.swift in Sources */,
 				3BFB5210228451720041D872 /* SharedController.swift in Sources */,
 				3BFB52182284D53E0041D872 /* EditProfileController.swift in Sources */,
@@ -542,7 +546,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3YG8R983WL;
 				INFOPLIST_FILE = "Sport With You !/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -561,7 +565,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3YG8R983WL;
 				INFOPLIST_FILE = "Sport With You !/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
