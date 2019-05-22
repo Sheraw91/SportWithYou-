@@ -16,9 +16,6 @@
 		3B50AA57228C7B8700F480FF /* exercises_c (10).gif in Resources */ = {isa = PBXBuildFile; fileRef = 3B50AA56228C7B8700F480FF /* exercises_c (10).gif */; };
 		3B551B6E2281EB6800BEBA5B /* SigninController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B551B6D2281EB6800BEBA5B /* SigninController.swift */; };
 		3B5EFF0B2293DBA7008EEBA8 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5EFF0A2293DBA7008EEBA8 /* PageViewController.swift */; };
-		3B5EFF0F2293F3A1008EEBA8 /* AddProgramController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5EFF0E2293F3A1008EEBA8 /* AddProgramController.swift */; };
-		3B5EFF1122942635008EEBA8 /* AddProgramController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5EFF1022942635008EEBA8 /* AddProgramController.swift */; };
-		3B5EFF1322942638008EEBA8 /* AddProgramController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5EFF1222942638008EEBA8 /* AddProgramController.swift */; };
 		3B5EFF1722942E4F008EEBA8 /* pause.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3B5EFF1622942E4F008EEBA8 /* pause.gif */; };
 		3B6BA058228D98220022144F /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6BA057228D98220022144F /* ActivityController.swift */; };
 		3B6BA05A228D9C670022144F /* timer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3B6BA059228D9C670022144F /* timer.mp3 */; };
@@ -30,6 +27,7 @@
 		3BB4B0082294B2E200903888 /* loading3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4B0062294B2E200903888 /* loading3.gif */; };
 		3BB4B0092294B2E200903888 /* loading5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4B0072294B2E200903888 /* loading5.gif */; };
 		3BB4B00B2294B31100903888 /* Sb1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4B00A2294B31100903888 /* Sb1ViewController.swift */; };
+		3BB4B00D2294C9B700903888 /* AddProgrammController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4B00C2294C9B700903888 /* AddProgrammController.swift */; };
 		3BF11745228E1EAA0054BEF8 /* ex10.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3BF11731228E1EA70054BEF8 /* ex10.gif */; };
 		3BF11746228E1EAA0054BEF8 /* ex11.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3BF11732228E1EA70054BEF8 /* ex11.gif */; };
 		3BF11747228E1EAA0054BEF8 /* ex19.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3BF11733228E1EA70054BEF8 /* ex19.gif */; };
@@ -74,9 +72,6 @@
 		3B50AA56228C7B8700F480FF /* exercises_c (10).gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "exercises_c (10).gif"; sourceTree = "<group>"; };
 		3B551B6D2281EB6800BEBA5B /* SigninController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninController.swift; sourceTree = "<group>"; };
 		3B5EFF0A2293DBA7008EEBA8 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		3B5EFF0E2293F3A1008EEBA8 /* AddProgramController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddProgramController.swift; path = "/Users/dany/Documents/App mobile/YDAYS/Sport With You !/Sport With You !/AddProgramController.swift"; sourceTree = "<absolute>"; };
-		3B5EFF1022942635008EEBA8 /* AddProgramController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddProgramController.swift; path = "/Users/dany/Documents/App mobile/YDAYS/Sport With You !/Sport With You !/AddProgramController.swift"; sourceTree = "<absolute>"; };
-		3B5EFF1222942638008EEBA8 /* AddProgramController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddProgramController.swift; path = "/Users/dany/Documents/App mobile/YDAYS/Sport With You !/Sport With You !/AddProgramController.swift"; sourceTree = "<absolute>"; };
 		3B5EFF1622942E4F008EEBA8 /* pause.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pause.gif; sourceTree = "<group>"; };
 		3B6BA057228D98220022144F /* ActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityController.swift; sourceTree = "<group>"; };
 		3B6BA059228D9C670022144F /* timer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = timer.mp3; path = ../../assets/sound/timer.mp3; sourceTree = "<group>"; };
@@ -88,6 +83,7 @@
 		3BB4B0062294B2E200903888 /* loading3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading3.gif; sourceTree = "<group>"; };
 		3BB4B0072294B2E200903888 /* loading5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading5.gif; sourceTree = "<group>"; };
 		3BB4B00A2294B31100903888 /* Sb1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sb1ViewController.swift; sourceTree = "<group>"; };
+		3BB4B00C2294C9B700903888 /* AddProgrammController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProgrammController.swift; sourceTree = "<group>"; };
 		3BF11731228E1EA70054BEF8 /* ex10.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ex10.gif; sourceTree = "<group>"; };
 		3BF11732228E1EA70054BEF8 /* ex11.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ex11.gif; sourceTree = "<group>"; };
 		3BF11733228E1EA70054BEF8 /* ex19.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ex19.gif; sourceTree = "<group>"; };
@@ -175,13 +171,11 @@
 				3BFB520B22841A420041D872 /* ProfileController.swift */,
 				3BFB52172284D53E0041D872 /* EditProfileController.swift */,
 				3BFB520D2284515C0041D872 /* ProgramController.swift */,
-				3B5EFF0E2293F3A1008EEBA8 /* AddProgramController.swift */,
+				3BB4B00C2294C9B700903888 /* AddProgrammController.swift */,
 				3BFB520F228451720041D872 /* SharedController.swift */,
 				3BA4B6BE228965EA00FB0C5D /* ProgressWeightController.swift */,
-				3B5EFF1222942638008EEBA8 /* AddProgramController.swift */,
 				3BFB5215228460A20041D872 /* TabBarViewController.swift */,
 				3B98FA132292E5330094092E /* PopupController.swift */,
-				3B5EFF1022942635008EEBA8 /* AddProgramController.swift */,
 				3BB4B00A2294B31100903888 /* Sb1ViewController.swift */,
 				3B5EFF0A2293DBA7008EEBA8 /* PageViewController.swift */,
 				3B0108112281E243005E1CBF /* Main.storyboard */,
@@ -387,16 +381,14 @@
 			files = (
 				3BA4B6BF228965EA00FB0C5D /* ProgressWeightController.swift in Sources */,
 				3B5EFF0B2293DBA7008EEBA8 /* PageViewController.swift in Sources */,
-				3B5EFF1322942638008EEBA8 /* AddProgramController.swift in Sources */,
 				3BFB5216228460A20041D872 /* TabBarViewController.swift in Sources */,
 				3BFB5210228451720041D872 /* SharedController.swift in Sources */,
 				3BFB52182284D53E0041D872 /* EditProfileController.swift in Sources */,
-				3B5EFF0F2293F3A1008EEBA8 /* AddProgramController.swift in Sources */,
 				3B6BA058228D98220022144F /* ActivityController.swift in Sources */,
 				3BFB520C22841A420041D872 /* ProfileController.swift in Sources */,
 				3BFB520A22838AE50041D872 /* HomeController.swift in Sources */,
+				3BB4B00D2294C9B700903888 /* AddProgrammController.swift in Sources */,
 				3BFB520E2284515C0041D872 /* ProgramController.swift in Sources */,
-				3B5EFF1122942635008EEBA8 /* AddProgramController.swift in Sources */,
 				3B94566B228ABB9D002E4BEE /* configGif.swift in Sources */,
 				3B0108102281E243005E1CBF /* LoginController.swift in Sources */,
 				3B551B6E2281EB6800BEBA5B /* SigninController.swift in Sources */,

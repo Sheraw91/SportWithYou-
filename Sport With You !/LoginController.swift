@@ -100,9 +100,7 @@ class LoginController: UIViewController {
   
 
     @IBAction func registerAction(_ sender: UIButton) {
-        print("ok")
         self.performSegue(withIdentifier: "goRegister", sender: self)
-        print("mdr")
     }
     
     

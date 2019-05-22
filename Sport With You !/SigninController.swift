@@ -111,8 +111,12 @@ class SigninController: UIViewController {
     }
     
     
+    @IBAction func goSB(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "go3sb", sender: self)
+
+    }
     
-    @IBAction func signupButtonWasPressed(_ sender: UIButton) {
+    @IBAction func signupAction(_ sender: UIButton) {
         if firstnameTextfield.text != "" && lastnameTextfield.text != "" && usernameTextfield.text != "" && emailTextfield.text != "" && passwordTextfield.text != "" && confirmPasswordTextfield.text != "" && countryTextfield.text != "" && birthdayTextfield.text != ""{
             
             if passwordTextfield.text == confirmPasswordTextfield.text
@@ -125,7 +129,7 @@ class SigninController: UIViewController {
                     }
                     else
                     {
-                    
+                        
                         let ref = Database.database().reference()
                         let userID = Auth.auth().currentUser?.uid
                         
@@ -135,13 +139,13 @@ class SigninController: UIViewController {
                         ref.child("users").child(userID!).setValue(["firstname": self.firstnameTextfield.text!, "lastname": self.lastnameTextfield.text!, "username": self.usernameTextfield.text!, "email": self.emailTextfield.text!, "country": self.countryTextfield.text!, "birthday": self.birthdayTextfield.text!, "url-img-pp": "https://firebasestorage.googleapis.com/v0/b/sportwithyou-ynov.appspot.com/o/profile_default.png?alt=media&token=8703a325-8607-43f8-8d75-b4c6596e01aa", "weight": 0, "height": 0, "gender": "none", "level": "beginner", "weight-progress": raz])
                         
                         print("Inscription de \(self.usernameTextfield.text ?? "no name") réussie ✅")
-
-                            // Redirection vers l'accueil
-                            self.performSegue(withIdentifier: "goToHome2", sender: self)
+                        
+                        // Redirection vers l'accueil
+                        self.performSegue(withIdentifier: "goToHome2", sender: self)
                     }
                 }
             }
-            // gestion error
+                // gestion error
             else {
                 print("Password are not the same.")
                 let alertController = UIAlertController(title : "Warning", message: "Password are not the same.", preferredStyle: .alert)
@@ -151,7 +155,7 @@ class SigninController: UIViewController {
             }
             
         }
-        // gestion error
+            // gestion error
         else {
             print("Error : missing fields.")
             let alertController = UIAlertController(title : "Warning", message: "Missing fields.", preferredStyle: .alert)
@@ -174,6 +178,7 @@ class SigninController: UIViewController {
     }
     
 }
+
 
 // MARK: - Text Field Manager
 extension SigninController: UITextFieldDelegate {
