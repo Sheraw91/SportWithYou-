@@ -58,7 +58,7 @@ Dany JEAN-CHARLES – [@Weder_77](https://twitter.com/Weder_77) – dany.jeancha
 
 <!-- Markdown link & img dfn's -->
 [swift-image]: https://img.shields.io/apm/v/swift.svg?color=swift&label=swift&logo=swift&logoColor=swift
-[xcode-image]: https://img.shields.io/apm/v/xcode.svg?color=xcode&label=xcode&logo=xcode&logoColor=xcode
+[xcode-image]: https://img.shields.io/badge/xcode-10.2-blue.svg
 [npm-url]: https://npmjs.org/package/datadog-metrics
 [npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
 [travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
