@@ -1,5 +1,5 @@
 # SportWithYou!
-> This project is a sport application to motivate people to do sport no matter how long they have.
+> This project is a sport application to motivate people to do sport no matter how long they have. This project was a school project. We had 3 weeks to finish him.
 
 [![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://swift.org/)
 ![Xcode 10.2][xcode-image]
