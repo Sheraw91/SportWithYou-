@@ -18,6 +18,8 @@ SportWithYou is a mobile application that allows users to play sports by creatin
 Only avaible on MacOS. This app was developped with swift 4.2 and xcode 10.2<br> 
 First, install pod in the directory where you have download this project.
 ```sh
+cd (directory where you have download this project)
+ls -l // Make sur that the podfile is here
 pod install
 ```
 Next, launch the .xcworkspace
