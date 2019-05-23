@@ -40,6 +40,8 @@ pod install
 
 * 1.0
     * First version of SportWithYou
+    * The website is hosted here: https://sportwithyou-ynov.firebaseapp.com
+
 ## Meta
 
 Dany JEAN-CHARLES – [@Weder_77](https://twitter.com/Weder_77) – dany.jeancharles@ynov.com
