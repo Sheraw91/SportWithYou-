@@ -7,7 +7,7 @@
 SportWithYou is a mobile application that allows users to play sports by creating their own sports programs, they can also enter the time during which they are available to play sports, then the application will offer them programs according to the time entered and according to their levels that was previously entered during registration. Users will also be able to create their own programs and share them with other users via the Community tab. The users will also be able to follow their evolutions (followed by the weight, ...), the users will also have success according to the performances which they provided in their profile.
 
 ![](Screens/Accueil.png)
-![](Screens/Explication.png)
+![](Screens/xplain.png)
 ![](Screens/Connexion.png)
 ![](Screens/Programmes.png)
 ![](Screens/Suivi_poids.png)
