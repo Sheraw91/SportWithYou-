@@ -1,4 +1,17 @@
 # SportWithYou!
+
+## Table of contents
+* [Presentation of project](#Presentation-of-project)
+* [Installation](#Installation)
+* [Usage example](#Usage-example)
+* [Development setup](#Development-setup)
+* [Release History](#Release-History)
+* [Meta](#Meta)
+* [Contributing](#Contributing)
+* [Screenshots](#Screenshots)
+
+## Presentation of project
+
 > This project is a sport application to motivate people to do sport no matter how long they have. This project was a school project. We had 3 weeks to finish him.
 
 [![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://swift.org/)
@@ -67,7 +80,7 @@ Dany JEAN-CHARLES – [@Weder_77](https://twitter.com/Weder_77) – dany.jeancha
 [travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
 [wiki]: https://github.com/yourname/yourproject/wiki
 
-## Screens
+## Screenshots
 ![](Screens/Accueil.png)
 ![](Screens/xplain.png)
 ![](Screens/Connexion.png)
