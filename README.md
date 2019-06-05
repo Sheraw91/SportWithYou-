@@ -53,7 +53,7 @@ pod install
 
 ## Release History
 
-* 1.0
+* 1.0 (24/05/19)
     * First version of SportWithYou
     * The website is hosted here: https://sportwithyou-ynov.firebaseapp.com
 
