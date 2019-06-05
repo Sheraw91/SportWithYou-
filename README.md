@@ -4,14 +4,9 @@
 [![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://swift.org/)
 ![Xcode 10.2][xcode-image]
 
-SportWithYou is a mobile application that allows users to play sports by creating their own sports programs, they can also enter the time during which they are available to play sports, then the application will offer them programs according to the time entered and according to their levels that was previously entered during registration. Users will also be able to create their own programs and share them with other users via the Community tab. The users will also be able to follow their evolutions (followed by the weight, ...), the users will also have success according to the performances which they provided in their profile. <br />Website : https://sportwithyou-ynov.firebaseapp.com
+SportWithYou is a mobile application that allows users to play sports by creating their own sports programs, they can also enter the time during which they are available to play sports, then the application will offer them programs according to the time entered and according to their levels that was previously entered during registration. Users will also be able to create their own programs and share them with other users via the Community tab. The users will also be able to follow their evolutions (followed by the weight, ...), the users will also have success according to the performances which they provided in their profile. <br />Website : https://sportwithyou-ynov.firebaseapp.com <br>
+> Screenshots are at the end of this readme.md
 
-![](Screens/Accueil.png)
-![](Screens/xplain.png)
-![](Screens/Connexion.png)
-![](Screens/Programmes.png)
-![](Screens/Suivi_poids.png)
-![](Screens/En_exercice.png)
 
 ## Installation
 
@@ -71,3 +66,11 @@ Dany JEAN-CHARLES – [@Weder_77](https://twitter.com/Weder_77) – dany.jeancha
 [travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
 [wiki]: https://github.com/yourname/yourproject/wiki
+
+## Screens
+![](Screens/Accueil.png)
+![](Screens/xplain.png)
+![](Screens/Connexion.png)
+![](Screens/Programmes.png)
+![](Screens/Suivi_poids.png)
+![](Screens/En_exercice.png)
