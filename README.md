@@ -31,6 +31,13 @@ At home, after work, the week-end etc ...
 <br>
 ## Development setup
 
+First, you have to install the pods.
+```sh
+git clone https://github.com/Weder77/SportWithYou-.git
+cd [project]
+pod install
+```
+
 If you want to install other pods for update this app, open podfile, add your pod that you want to insall and write
 ```sh
 pod install
