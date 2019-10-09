@@ -12,7 +12,7 @@
 
 ## Presentation of project
 
-> This project is a sport application to motivate people to do sport no matter how long they have. This project was a school project. We had 3 weeks to finish him.
+> This project is a sport application to motivate people to do sport no matter how long they have. This project was a school project. We had 3 weeks to finish him. So, we decided to make this app open source !
 
 [![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://swift.org/)
 ![Xcode 10.2][xcode-image]
